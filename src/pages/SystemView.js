@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import ChatBox from '../components/ChatBox';
 
 // let chatlogs = [];
@@ -8,62 +9,73 @@ const SystemView = () => {
   const [attachments, setAttachments] = useState([]);
   const [report, setReport] = useState(true);
   const [isDiable, setIsDisable] = useState(false);
+  const [isNewChat, setIsNewChat] = useState(false);
 
   const fileRef = useRef(null);
   const promptRef = useRef(null);
 
+  const location = useLocation();
+  const pathname = location.pathname;
+  const navigateTo = useNavigate();
+
   const handleSubmit = async (event) => {
-    event.preventDefault();
-    console.log('>>> Submit');
-    console.log(promptRef.current.innerText);
-    setAttachments([]);
+    if (isNewChat) {
+      console.log('New Chat');
+      navigateTo(pathname);
+      setIsNewChat(false);
+    } else {
+      event.preventDefault();
+      console.log('>>> Submit');
+      console.log(promptRef.current.innerText);
+      setAttachments([]);
 
-    setIsDisable(true);
+      setIsDisable(true);
 
-    const newLog = {
-      role: 'user',
-      content: promptRef.current.innerText,
-      attachments: attachments,
-    };
-    const loading = { role: 'assistant', content: null };
+      const newLog = {
+        role: 'user',
+        content: promptRef.current.innerText,
+        attachments: attachments,
+      };
+      const loading = { role: 'assistant', content: null };
 
-    setChatLogs([...chatlogs, newLog, loading]);
-    promptRef.current.innerText = '';
+      setChatLogs([...chatlogs, newLog, loading]);
+      promptRef.current.innerText = '';
 
-    const formData = new FormData();
-    [...chatlogs, newLog, loading].forEach((log) => {
-      formData.append(
-        'prompt',
-        JSON.stringify({ role: log.role, content: log.content })
+      const formData = new FormData();
+      [...chatlogs, newLog, loading].forEach((log) => {
+        formData.append(
+          'prompt',
+          JSON.stringify({ role: log.role, content: log.content })
+        );
+      });
+      formData.append('report', report);
+      attachments.forEach((attach) => {
+        formData.append('attachments', attach);
+      });
+
+      const res = await fetch(
+        `${process.env.REACT_APP_API_ROOT}/v1/chat/system`,
+        {
+          // const res = await fetch(`/v1/chat/system`, {
+          method: 'POST',
+          body: formData,
+        }
       );
-    });
-    formData.append('report', report);
-    attachments.forEach((attach) => {
-      formData.append('attachments', attach);
-    });
 
-    const res = await fetch(
-      `${process.env.REACT_APP_API_ROOT}/v1/chat/system`,
-      {
-        // const res = await fetch(`/v1/chat/system`, {
-        method: 'POST',
-        body: formData,
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+      let msg = '';
+      while (true) {
+        const { done, value: chunk } = await reader.read();
+        if (done) break;
+        const decodedValue = decoder.decode(chunk);
+        msg += decodedValue;
+        console.log(decodedValue);
+        setChatLogs([...chatlogs, newLog, { role: 'assistant', content: msg }]);
       }
-    );
 
-    const reader = res.body.getReader();
-    const decoder = new TextDecoder();
-    let msg = '';
-    while (true) {
-      const { done, value: chunk } = await reader.read();
-      if (done) break;
-      const decodedValue = decoder.decode(chunk);
-      msg += decodedValue;
-      console.log(decodedValue);
-      setChatLogs([...chatlogs, newLog, { role: 'assistant', content: msg }]);
+      setIsDisable(false);
     }
-
-    setIsDisable(false);
   };
 
   console.log(chatlogs);
@@ -73,15 +85,13 @@ const SystemView = () => {
       {chatlogs.length > 0 ? (
         <ChatBox logs={chatlogs} />
       ) : (
-        <div className="text-center w-[60vw] mt-14">
+        <div className="text-center w-[60vw]">
           <img src="/log_sense_logo.png" className="w-24 h-24 mx-auto mb-5" />
           <div className="grid-rows-3 grid">
-            <p className="text-[36px] font-bold">
-              AI Application Log Analyzer: Free & Easy Log Analysis
-            </p>
+            <p className="text-[36px] font-bold">AI System Log Analyzer</p>
             <p className="text-[24px] font-bold">
-              Instantly analyze Application logs (including Event, Performance,
-              Resource & Health) at no cost.
+              Instantly analyze System logs (including Event, Performance,
+              Resource & Error logs) at no cost.
             </p>
             <p className="italic text-lg">
               Paste your logs or upload your .txt file for rapid insights and
@@ -98,6 +108,42 @@ const SystemView = () => {
         onSubmit={handleSubmit}
         className="w-[70vw] border-[1px] border-black rounded-lg absolute bottom-5 px-3 py-2"
       >
+        <div className="absolute left-0 -top-10">
+          <button
+            className="bottom-0 flex flex-row items-center"
+            onClick={() => setIsNewChat(true)}
+          >
+            <svg
+              width="36"
+              height="36"
+              viewBox="-1.92 -1.92 27.84 27.84"
+              fill="none"
+              stroke="#000000"
+              transform="matrix(1, 0, 0, 1, 0, 0)rotate(0)"
+            >
+              <path
+                d="M8 10.5H16"
+                stroke="#1C274C"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+              ></path>
+              <path
+                d="M8 14H13.5"
+                stroke="#1C274C"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+              ></path>
+              <path
+                d="M17 3.33782C15.5291 2.48697 13.8214 2 12 2C6.47715 2 2 6.47715 2 12C2 13.5997 2.37562 15.1116 3.04346 16.4525C3.22094 16.8088 3.28001 17.2161 3.17712 17.6006L2.58151 19.8267C2.32295 20.793 3.20701 21.677 4.17335 21.4185L6.39939 20.8229C6.78393 20.72 7.19121 20.7791 7.54753 20.9565C8.88837 21.6244 10.4003 22 12 22C17.5228 22 22 17.5228 22 12C22 10.1786 21.513 8.47087 20.6622 7"
+                stroke="#1C274C"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+              ></path>
+            </svg>
+            <span className="w-full text-ellipsis">New Chat</span>
+          </button>
+        </div>
+
         <div className="absolute right-0 -top-8">
           <input
             type="checkbox"

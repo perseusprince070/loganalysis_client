@@ -1,17 +1,16 @@
 export default function Home() {
   return (
     <div className="m-0 p-0 bg-[#f4f4f4] text-[#333] font-sans">
-      <header className="bg-[#007bff] text-[#fff] py-5 text-center">
+      <header className="bg-[#00B0F0] text-[#fff] py-5 text-center">
         <img
           src="/log_sense_logo.png"
           alt="LogSenseAI Logo"
-          className="max-w-[300px] py-[20px] mx-auto block"
+          className="w-[200px] h-[200px] py-[20px] mx-auto block"
         />
-        <h1 className="text-h1 font-bold mb-5">
-          Welcome to Log Sense AI - Your Intelligent Log Analysis Solution
-        </h1>
+        <h1 className="text-h1 font-bold mb-1">Welcome to Log Sense AI</h1>
         <p className="text-[18px] leading-7">
-          Unlock the Power of AI-Driven Log Analysis for Your Business
+          Experience the Revolution in Log Analysis - Powered by AI, Offered for
+          Free!
         </p>
       </header>
 
@@ -43,18 +42,12 @@ export default function Home() {
         </ul>
 
         <p className="text-[18px] leading-7 my-5">
-          Welcome to Log Sense AI - Your Intelligent Log Analysis Solution, the
-          platform that bridges the gap between the complexities of log data and
-          the diverse needs of IT professionals. Whether you're a System
-          Administrator seeking proactive maintenance, a Software Developer in
-          need of debugging assistance, or an IT Help Desk aiming to reduce the
-          take it takes to resolve customer issues, Log Sense AI is the trusted
-          partner that understands your unique challenges. Our AI-powered tool
-          not only identifies log issues but also provides practical solutions,
-          making your tasks more efficient and effective. Explore the power of
-          Log Sense AI and discover how it can transform the way you harness the
-          true potential of your logs while significantly reducing the time you
-          spend on manual analysis.
+          Dive into the world of advanced log analysis with Log Sense AI, your
+          intelligent solution that simplifies complex data. Our AI-driven tool,
+          available at no cost, transforms how you understand and utilize log
+          data. Perfect for businesses of any size, Log Sense AI offers powerful
+          insights to enhance your operations and decision-making. Join the era
+          of smarter, cost-effective log analysis today!
         </p>
 
         <h2 className="text-h2 font-bold my-5">Key Features:</h2>

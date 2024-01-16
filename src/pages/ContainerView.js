@@ -86,12 +86,10 @@ const ContainerView = () => {
       {chatlogs.length > 0 ? (
         <ChatBox logs={chatlogs} />
       ) : (
-        <div className="text-center w-[60vw] mt-14">
+        <div className="text-center w-[60vw]">
           <img src="/log_sense_logo.png" className="w-24 h-24 mx-auto mb-5" />
           <div className="grid-rows-3 grid">
-            <p className="text-[36px] font-bold">
-              Container Log AI Analyzer: Free & Easy Log Analysis
-            </p>
+            <p className="text-[36px] font-bold">Container Log AI Analyzer</p>
             <p className="text-[24px] font-bold">
               Instantly analyze container logs (including Docker, EKS, AKS,
               Kubernetes) at no cost.
