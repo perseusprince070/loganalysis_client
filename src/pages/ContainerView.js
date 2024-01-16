@@ -53,11 +53,15 @@ const ContainerView = () => {
         formData.append('attachments', attach);
       });
 
-      const res = await fetch('http://localhost:5000/v1/chat/container', {
-        // const res = await fetch(`/v1/chat/container`, {
-        method: 'POST',
-        body: formData,
-      });
+      console.log('#################', process.env.REACT_APP_API_ROOT);
+      const res = await fetch(
+        `${process.env.REACT_APP_API_ROOT}/v1/chat/container`,
+        {
+          // const res = await fetch(`/v1/chat/container`, {
+          method: 'POST',
+          body: formData,
+        }
+      );
 
       const reader = res.body.getReader();
       const decoder = new TextDecoder();

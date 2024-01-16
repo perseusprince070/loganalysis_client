@@ -42,11 +42,14 @@ const WebserverView = () => {
       formData.append('attachments', attach);
     });
 
-    const res = await fetch('http://localhost:5000/v1/chat/webserver', {
-      // const res = await fetch(`/v1/chat/webserver`, {
-      method: 'POST',
-      body: formData,
-    });
+    const res = await fetch(
+      `${process.env.REACT_APP_API_ROOT}/v1/chat/webserver`,
+      {
+        // const res = await fetch(`/v1/chat/webserver`, {
+        method: 'POST',
+        body: formData,
+      }
+    );
 
     const reader = res.body.getReader();
     const decoder = new TextDecoder();
