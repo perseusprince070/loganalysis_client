@@ -50,7 +50,7 @@ const Chatbox = ({ logs }) => {
         ref={scrollRef}
         className="w-[70vw] mt-[10vh] h-[70vh] overflow-auto"
       >
-        <ToastContainer position="top-right" limit={1} />
+        <ToastContainer position="top-right" limit={1} autoClose={500} />
         {logs.map((log, idx) =>
           log.role == 'user' ? (
             <div key={idx} className="w-full overflow-hidden flex gap-[8px]">
