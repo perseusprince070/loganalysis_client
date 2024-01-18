@@ -2,7 +2,7 @@ import React from 'react';
 import { Document, Packer, Paragraph, TextRun } from 'docx';
 import MDEditor from '@uiw/react-md-editor';
 import { useRef, useEffect } from 'react';
-import { ToastContainer, toast } from 'react-toast';
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Chatbox = ({ logs }) => {
