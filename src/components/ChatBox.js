@@ -1,8 +1,9 @@
 import React from 'react';
 import { Document, Packer, Paragraph, TextRun } from 'docx';
 import MDEditor from '@uiw/react-md-editor';
-import { useRef } from 'react';
-import { useEffect } from 'react';
+import { useRef, useEffect } from 'react';
+import { ToastContainer, toast } from 'react-toast';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Chatbox = ({ logs }) => {
   const chatRef = useRef(null);
@@ -37,7 +38,7 @@ const Chatbox = ({ logs }) => {
   const handleCopyLog = async (log) => {
     try {
       await navigator.clipboard.writeText(log);
-      alert('copied');
+      toast.success('Copied');
     } catch (err) {
       console.log('>>> Error : ', err);
     }
@@ -49,6 +50,7 @@ const Chatbox = ({ logs }) => {
         ref={scrollRef}
         className="w-[70vw] mt-[10vh] h-[70vh] overflow-auto"
       >
+        <ToastContainer position="top-right" limit={1} />
         {logs.map((log, idx) =>
           log.role == 'user' ? (
             <div key={idx} className="w-full overflow-hidden flex gap-[8px]">
@@ -154,7 +156,7 @@ const Chatbox = ({ logs }) => {
                           className="size-7 p-1 cursor-pointer"
                           onClick={async () => handleCopyLog(log.content)}
                         >
-                          <svg viewBox="0 0 24 24" fill="none">
+                          {/* <svg viewBox="0 0 24 24" fill="none">
                             <path
                               d="M6 11C6 8.17157 6 6.75736 6.87868 5.87868C7.75736 5 9.17157 5 12 5H15C17.8284 5 19.2426 5 20.1213 5.87868C21 6.75736 21 8.17157 21 11V16C21 18.8284 21 20.2426 20.1213 21.1213C19.2426 22 17.8284 22 15 22H12C9.17157 22 7.75736 22 6.87868 21.1213C6 20.2426 6 18.8284 6 16V11Z"
                               stroke="#000"
@@ -164,6 +166,14 @@ const Chatbox = ({ logs }) => {
                               d="M6 19C4.34315 19 3 17.6569 3 16V10C3 6.22876 3 4.34315 4.17157 3.17157C5.34315 2 7.22876 2 11 2H15C16.6569 2 18 3.34315 18 5"
                               stroke="#000"
                               strokeWidth="1.5"
+                            ></path>
+                          </svg> */}
+                          <svg viewBox="0 0 24 24" fill="none">
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M12 4C10.8954 4 10 4.89543 10 6H14C14 4.89543 13.1046 4 12 4ZM8.53513 4C9.22675 2.8044 10.5194 2 12 2C13.4806 2 14.7733 2.8044 15.4649 4H17C18.6569 4 20 5.34315 20 7V19C20 20.6569 18.6569 22 17 22H7C5.34315 22 4 20.6569 4 19V7C4 5.34315 5.34315 4 7 4H8.53513ZM8 6H7C6.44772 6 6 6.44772 6 7V19C6 19.5523 6.44772 20 7 20H17C17.5523 20 18 19.5523 18 19V7C18 6.44772 17.5523 6 17 6H16C16 7.10457 15.1046 8 14 8H10C8.89543 8 8 7.10457 8 6Z"
+                              fill="currentColor"
                             ></path>
                           </svg>
                         </div>

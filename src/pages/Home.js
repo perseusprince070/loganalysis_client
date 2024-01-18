@@ -5,7 +5,7 @@ export default function Home() {
         <img
           src="/log_sense_logo.png"
           alt="LogSenseAI Logo"
-          className="w-[200px] h-[200px] py-[20px] mx-auto block"
+          className="py-[20px] mx-auto block"
         />
         <h1 className="text-h1 font-bold mb-1">Welcome to Log Sense AI</h1>
         <p className="text-[18px] leading-7">
