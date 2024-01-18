@@ -81,7 +81,7 @@ const ApplicationView = () => {
   console.log(chatlogs);
 
   return (
-    <div className="flex flex-col place-items-center h-[100vh]">
+    <div className="flex flex-col place-items-center">
       <Helmet>
         <title>Log Sense AI | Application Log Analyzer</title>
       </Helmet>

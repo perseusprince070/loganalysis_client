@@ -82,7 +82,7 @@ const SystemView = () => {
   console.log(chatlogs);
 
   return (
-    <div className="flex flex-col place-items-center h-[100vh]">
+    <div className="flex flex-col place-items-center">
       <Helmet>
         <title>Log Sense AI | System Log Analyzer</title>
       </Helmet>
