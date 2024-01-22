@@ -89,20 +89,25 @@ const ApplicationView = () => {
         <ChatBox logs={chatlogs} />
       ) : (
         <div className="text-center w-[60vw]">
-          <img src="/log_sense_logo.png" className="w-24 h-24 mx-auto mb-5" />
-          <div className="grid-rows-3 grid">
-            <p className="text-[36px] font-bold">AI Application Log Analyzer</p>
+          <div className="grid-rows-4 grid">
+            <p className="text-[36px] font-bold">
+              LogGPT <sup>&reg;</sup>
+            </p>
             <p className="text-[24px] font-bold">
-              Instantly analyze Application logs (including Web, Mobile, Cloud &
-              Enterprise apps) at no cost.
+              Generative AI for Advanced Application Log Trouble-Shooting
             </p>
-            <p className="italic text-lg">
-              Paste your logs or upload your .txt file for rapid insights and
-              solutions.
-              <br />
-              Check the blue box to generate a report.Uncheck the box to ask
-              follow up questions.
+            <p className="italic text-[20px]">
+              Unlock swift, comprehensive log insights and actionable solutions
+              powered by ChatGPT
             </p>
+            <div className="flex gap-[20px] mx-auto">
+              <a href="/" target="_blank" className="underline text-[blue]">
+                View Sample AI Report
+              </a>
+              <a href="/" target="_blank" className="underline text-[blue]">
+                How Report is Created by AI
+              </a>
+            </div>
           </div>
         </div>
       )}

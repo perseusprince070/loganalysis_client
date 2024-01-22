@@ -1,42 +1,83 @@
 export default function Home() {
   return (
     <div className="m-0 p-0 bg-[#f4f4f4] text-[#333] font-sans">
-      <header className="bg-[#00B0F0] text-[#fff] py-5 text-center">
+      <header className="bg-[#00B0F0] text-[#fff] text-center flex items-center gap-5 justify-center">
         <img
           src="/log_sense_logo.png"
           alt="LogSenseAI Logo"
-          className="py-[20px] mx-auto block"
+          className="py-[20px]"
         />
-        <h1 className="text-h1 font-bold mb-1">Welcome to Log Sense AI</h1>
-        <p className="text-[18px] leading-7">
-          Experience the Revolution in Log Analysis - Powered by AI, Offered for
-          Free!
-        </p>
+        <div className="">
+          <h1 className="text-h1 font-bold mb-1">
+            Generative AI for Advanced Log Trouble-Shooting
+          </h1>
+          <p className="text-[18px] leading-7">
+            Unlock swift, comprehensive log  insights and actionable solutions
+            powered by ChatGPT
+          </p>
+        </div>
       </header>
 
       <div className="max-w-[960px] mx-auto p-[20px]">
         <h2 className="text-h2 font-bold my-5">
-          Explore our AI-powered Log Analysis Tools
+          Discover Our Advanced AI-Driven ChatGPT Log Analysis Solutions -
+          LogGPT
         </h2>
         <ul className="list-square ml-10 my-5">
           <li>
-            <a href="/container" className="underline text-[blue]">
-              AI Container Log Analysis
+            <a
+              href="/container"
+              className="underline text-[blue]"
+              target="_blank"
+            >
+              LogGPT for Container Logs
             </a>
           </li>
           <li>
-            <a href="/system" className="underline text-[blue]">
-              AI System Log Analysis
+            <a href="/system" className="underline text-[blue]" target="_blank">
+              LogGPT for System Logs
             </a>
           </li>
           <li>
-            <a href="/application" className="underline text-[blue]">
-              AI Application Log Analysis
+            <a
+              href="/application"
+              className="underline text-[blue]"
+              target="_blank"
+            >
+              LogGPT for Application Logs
             </a>
           </li>
           <li>
-            <a href="/webserver" className="underline text-[blue]">
-              AI Web Server Log Analysis
+            <a
+              href="/webserver"
+              className="underline text-[blue]"
+              target="_blank"
+            >
+              LogGPT for Web Server Logs
+            </a>
+          </li>
+        </ul>
+
+        <h2 className="text-h2 font-bold my-5">Resources</h2>
+        <ul className="list-square ml-10 my-5">
+          <li>
+            <a href="/" className="underline text-[blue]" target="_blank">
+              View Sample LogGPT Report
+            </a>
+          </li>
+          <li>
+            <a href="/" className="underline text-[blue]" target="_blank">
+              How the LogGPT Report is Created by AI
+            </a>
+          </li>
+          <li>
+            <a href="/" className="underline text-[blue]" target="_blank">
+              FAQs & Help
+            </a>
+          </li>
+          <li>
+            <a href="/" className="underline text-[blue]" target="_blank">
+              Contact Us
             </a>
           </li>
         </ul>
