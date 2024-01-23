@@ -23,7 +23,7 @@ export default function Home() {
           Discover Our Advanced AI-Driven ChatGPT Log Analysis Solutions -
           LogGPT
         </h2>
-        <ul className="list-square ml-10 my-5">
+        <ul className="list-square ml-10 my-5" style={{ color: 'blue' }}>
           <li className="my-3">
             <a
               href="/container"
@@ -59,7 +59,7 @@ export default function Home() {
         </ul>
 
         <h2 className="text-h2 font-bold my-5">Resources</h2>
-        <ul className="list-square ml-10 my-5">
+        <ul className="list-square ml-10 my-5" style={{ color: 'blue' }}>
           <li className="my-3">
             <a
               href="/sample-report"
