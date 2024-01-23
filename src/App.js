@@ -9,6 +9,10 @@ import ApplicationView from './pages/ApplicationView';
 import ApplicationFAQView from './pages/ApplicationFAQView';
 import WebServerView from './pages/WebServerView';
 import WebServerFAQView from './pages/WebServerFAQView';
+import HowReport from './pages/HowReport';
+import DataPrivacy from './pages/DataPrivacy';
+import SampleReport from './pages/SampleReport';
+import FAQ from './pages/FAQView';
 
 function App() {
   return (
@@ -27,6 +31,12 @@ function App() {
 
           <Route path="/webserver" element={<WebServerView />} />
           <Route path="/webserver-help" element={<WebServerFAQView />} />
+
+          <Route path="/sample-report" element={<SampleReport />} />
+          <Route path="/how-report" element={<HowReport />} />
+
+          <Route path="/data-privacy" element={<DataPrivacy />} />
+          <Route path="/faq" element={<FAQ />} />
         </Route>
       </Routes>
     </BrowserRouter>
@@ -34,4 +44,3 @@ function App() {
 }
 
 export default App;
-

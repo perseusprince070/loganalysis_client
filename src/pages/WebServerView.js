@@ -102,10 +102,18 @@ const WebserverView = () => {
               powered by ChatGPT
             </p>
             <div className="flex gap-[20px] mx-auto">
-              <a href="/" target="_blank" className="underline text-[blue]">
+              <a
+                href="/sample-report"
+                target="_blank"
+                className="underline text-[blue]"
+              >
                 View Sample AI Report
               </a>
-              <a href="/" target="_blank" className="underline text-[blue]">
+              <a
+                href="/how-report"
+                target="_blank"
+                className="underline text-[blue]"
+              >
                 How Report is Created by AI
               </a>
             </div>
@@ -115,7 +123,7 @@ const WebserverView = () => {
 
       <form
         onSubmit={handleSubmit}
-        className="w-[70vw] border-[1px] border-black rounded-lg absolute bottom-5 px-3 py-2"
+        className="w-[70vw] border-[1px] border-black rounded-lg absolute ;lg:bottom-5 md:bottom-5 sm:bottom-5 -bottom-16 px-3 py-2"
       >
         <div className="absolute left-0 -top-10">
           <button
@@ -165,6 +173,7 @@ const WebserverView = () => {
             Analyze Log & Create Report
           </label>
         </div>
+
         <div className="h-2/3 flex mb-2">
           {attachments.map((file, idx) => (
             <div
@@ -230,7 +239,7 @@ const WebserverView = () => {
 
           <div
             ref={promptRef}
-            className="w-full outline-none overflow-auto overflow-y-scroll resize-none my-auto max-h-24 text-wrap bg-transparent mx-3"
+            className="w-full outline-none overflow-auto resize-none my-auto max-h-24 text-wrap bg-transparent mx-3"
             contentEditable
           />
 

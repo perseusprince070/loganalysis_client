@@ -61,22 +61,33 @@ export default function Home() {
         <h2 className="text-h2 font-bold my-5">Resources</h2>
         <ul className="list-square ml-10 my-5">
           <li>
-            <a href="/" className="underline text-[blue]" target="_blank">
+            <a
+              href="/sample-report"
+              className="underline text-[blue]"
+              target="_blank"
+            >
               View Sample LogGPT Report
             </a>
           </li>
           <li>
-            <a href="/" className="underline text-[blue]" target="_blank">
+            <a
+              href="/how-report"
+              className="underline text-[blue]"
+              target="_blank"
+            >
               How the LogGPT Report is Created by AI
             </a>
           </li>
           <li>
-            <a href="/" className="underline text-[blue]" target="_blank">
+            <a href="/faq" className="underline text-[blue]" target="_blank">
               FAQs & Help
             </a>
           </li>
           <li>
-            <a href="/" className="underline text-[blue]" target="_blank">
+            <a
+              href="mailto:feedback@logsenseai.com"
+              className="underline text-[blue]"
+            >
               Contact Us
             </a>
           </li>

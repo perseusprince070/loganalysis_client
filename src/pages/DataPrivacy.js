@@ -8,12 +8,14 @@ const DataPrivacy = () => {
         <title>Log Sense AI | Data Privacy Policy</title>
       </Helmet>
       <header>
-        <h1>LogGPT Data Privacy Policy</h1>
-        <p>Effective as of 1/19/21</p>
+        <h1 className="text-h1 font-bold mb-5 text-[#333]">
+          LogGPT Data Privacy Policy
+        </h1>
+        <p className="my-3">Effective as of 1/19/21</p>
       </header>
 
-      <section class="policy-section">
-        <p>
+      <section class="mb-5">
+        <p className="my-3">
           At LogGPT, we understand the sensitivity of the data you trust us
           with. Your privacy and data security are our utmost priorities. This
           Data Privacy Policy is designed to inform you about our practices
@@ -23,16 +25,18 @@ const DataPrivacy = () => {
         </p>
       </section>
 
-      <section class="policy-section">
-        <h2>1. Data Collection and Usage</h2>
+      <section class="mb-5">
+        <h2 className="text-h2 font-bold my-5 text-[#333]">
+          1. Data Collection and Usage
+        </h2>
         <ul>
-          <li>
+          <li className="my-3">
             <strong>1.1 Data Collection:</strong> LogGPT is a sophisticated log
             file analyzer that processes your log files to deliver insights. The
             data processed includes but is not limited to, server logs,
             application logs, and error logs.
           </li>
-          <li>
+          <li className="my-3">
             <strong>1.2 Data Usage:</strong> The data you provide is exclusively
             used for the purpose of analyzing and generating insights during
             your session with LogGPT. We do not use your data for any other
@@ -42,16 +46,18 @@ const DataPrivacy = () => {
         </ul>
       </section>
 
-      <section class="policy-section">
-        <h2>2. Data Storage and Retention</h2>
+      <section class="mb-5">
+        <h2 className="text-h2 font-bold my-5 text-[#333]">
+          2. Data Storage and Retention
+        </h2>
         <ul>
-          <li>
+          <li className="my-3">
             <strong>2.1 No Data Storage:</strong> We do not store your logs or
             queries post-session. Once your session with LogGPT ends, all the
             data provided during the session, including your logs and the
             results generated, are completely deleted from our system.
           </li>
-          <li>
+          <li className="my-3">
             <strong>2.2 Data Processing:</strong> During your session, your data
             is processed securely. We employ industry-standard security measures
             to ensure the confidentiality and integrity of your data while it is
@@ -60,16 +66,18 @@ const DataPrivacy = () => {
         </ul>
       </section>
 
-      <section class="policy-section">
-        <h2>3. Data Sharing and Disclosure</h2>
+      <section class="mb-5">
+        <h2 className="text-h2 font-bold my-5 text-[#333]">
+          3. Data Sharing and Disclosure
+        </h2>
         <ul>
-          <li>
+          <li className="my-3">
             <strong>3.1 No Data Sharing:</strong> LogGPT does not share your
             data with any third parties. We do not sell, rent, or otherwise
             disclose your personal information or business data to third parties
             for their marketing or advertising purposes.
           </li>
-          <li>
+          <li className="my-3">
             <strong>3.2 Legal Disclosure:</strong> We may disclose your data if
             required by law, for example, in response to a court order or a
             subpoena. In such cases, we will make every effort to notify you of
@@ -78,16 +86,16 @@ const DataPrivacy = () => {
         </ul>
       </section>
 
-      <section class="policy-section">
-        <h2>4. Data Security</h2>
+      <section class="mb-5">
+        <h2 className="text-h2 font-bold my-5 text-[#333]">4. Data Security</h2>
         <ul>
-          <li>
+          <li className="my-3">
             <strong>4.1 Security Measures:</strong> LogGPT is committed to
             protecting the security of your data. We use a variety of
             industry-standard security technologies and procedures to help
             protect your data from unauthorized access, use, or disclosure.
           </li>
-          <li>
+          <li className="my-3">
             <strong>4.2 User Responsibility:</strong> While we take stringent
             measures to secure your data, we also recommend that you remove any
             sensitive information from your log files before submission to
@@ -96,9 +104,11 @@ const DataPrivacy = () => {
         </ul>
       </section>
 
-      <section class="policy-section">
-        <h2>5. Changes to This Privacy Policy</h2>
-        <p>
+      <section class="mb-5">
+        <h2 className="text-h2 font-bold my-5 text-[#333]">
+          5. Changes to This Privacy Policy
+        </h2>
+        <p className="my-3">
           LogGPT reserves the right to change this Data Privacy Policy. Any
           changes will be posted on this page with an updated revision date. We
           encourage you to periodically review this page for the latest
@@ -106,9 +116,9 @@ const DataPrivacy = () => {
         </p>
       </section>
 
-      <section class="policy-section">
-        <h2>6. Contact Us</h2>
-        <p>
+      <section class="mb-5">
+        <h2 className="text-h2 font-bold my-5 text-[#333]">6. Contact Us</h2>
+        <p className="my-3">
           If you have any questions or concerns about this Data Privacy Policy
           or our data handling practices, please contact us at [your contact
           information].
@@ -116,10 +126,10 @@ const DataPrivacy = () => {
       </section>
 
       <footer>
-        <p>
+        <p className="my-3">
           By using LogGPT, you agree to the terms of this Data Privacy Policy.
         </p>
-        <p>This Policy was last updated on 1/19/21.</p>
+        <p className="my-3">This Policy was last updated on 1/19/21.</p>
       </footer>
     </div>
   );

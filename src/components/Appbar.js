@@ -38,33 +38,49 @@ const Appbar = () => {
             </div>
           </div>
         </Link>
-        {pathname === '/container' ? (
-          <a href="/container-help" target="_blank">
-            <div className="underline font-medium absolute right-2 top-3 cursor-pointer">
-              Help & FAQs
-            </div>
-          </a>
-        ) : pathname === '/system' ? (
-          <a href="/system-help" target="_blank">
-            <div className="underline font-medium absolute right-2 top-3 cursor-pointer">
-              Help & FAQs
-            </div>
-          </a>
-        ) : pathname === '/application' ? (
-          <a href="/application-help" target="_blank">
-            <div className="underline font-medium absolute right-2 top-3 cursor-pointer">
-              Help & FAQs
-            </div>
-          </a>
-        ) : pathname === '/webserver' ? (
-          <a href="/webserver-help" target="_blank">
-            <div className="underline font-medium absolute right-2 top-3 cursor-pointer">
-              Help & FAQs
-            </div>
-          </a>
-        ) : (
-          ''
-        )}
+        <div className="flex gap-7 absolute right-5">
+          {pathname === '/container' ||
+          '/system' ||
+          '/application' ||
+          '/webserver' ? (
+            <>
+              <a
+                href="/data-privacy"
+                className="underline text-[blue]"
+                target="_blank"
+              >
+                Data Privacy Policy
+              </a>
+              <a
+                href="mailto:feedback@logsenseai.com"
+                className="underline text-[blue]"
+              >
+                Feedback
+              </a>
+            </>
+          ) : (
+            ''
+          )}
+          {pathname === '/container' ? (
+            <a href="/container-help" target="_blank">
+              <div className="underline text-[blue]">Help & FAQs</div>
+            </a>
+          ) : pathname === '/system' ? (
+            <a href="/system-help" target="_blank">
+              <div className="underline text-[blue]">Help & FAQs</div>
+            </a>
+          ) : pathname === '/application' ? (
+            <a href="/application-help" target="_blank">
+              <div className="underline text-[blue]">Help & FAQs</div>
+            </a>
+          ) : pathname === '/webserver' ? (
+            <a href="/webserver-help" target="_blank">
+              <div className="underline text-[blue]">Help & FAQs</div>
+            </a>
+          ) : (
+            ''
+          )}
+        </div>
       </div>
     </div>
   );
