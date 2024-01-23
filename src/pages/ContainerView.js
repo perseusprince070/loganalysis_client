@@ -11,7 +11,6 @@ const ContainerView = () => {
   const [report, setReport] = useState(true);
   const [isDiable, setIsDisable] = useState(false);
   const [isNewChat, setIsNewChat] = useState(false);
-  const [placeholderVisible, setPlaceholderVisible] = useState(true);
 
   const fileRef = useRef(null);
   const promptRef = useRef(null);
@@ -82,12 +81,6 @@ const ContainerView = () => {
   };
 
   console.log(chatlogs);
-
-  const handleContentChange = () => {
-    if (promptRef.current) {
-      setPlaceholderVisible(promptRef.current.innerText.trim().length === 0);
-    }
-  };
 
   return (
     <div className="flex flex-col place-items-center">
@@ -244,20 +237,9 @@ const ContainerView = () => {
           />
           <div
             ref={promptRef}
-            className={`w-full outline-none overflow-auto resize-none my-auto max-h-24 text-wrap bg-transparent mx-3 ${
-              placeholderVisible ? 'placeholder-style' : ''
-            }`}
+            className="w-full outline-none overflow-auto resize-none my-auto max-h-24 text-wrap bg-transparent mx-3"
             contentEditable
-            onInput={handleContentChange}
-            onFocus={handleContentChange}
-            onBlur={handleContentChange}
-          >
-            {placeholderVisible && (
-              <div className="text-[#727272]">
-                Paste or upload your .txt Container log files...
-              </div>
-            )}
-          </div>
+          />
           <button className="bottom-0" type="submit" disabled={isDiable}>
             <svg
               width="36"
