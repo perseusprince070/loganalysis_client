@@ -88,7 +88,7 @@ const ApplicationView = () => {
       {chatlogs.length > 0 ? (
         <ChatBox logs={chatlogs} />
       ) : (
-        <div className="text-center w-[60vw] grid-rows-4 grid">
+        <div className="text-center w-[60vw] grid-rows-5 grid">
           <p className="text-[36px] font-bold">
             LogGPT <sup>&reg;</sup>
           </p>
@@ -114,6 +114,9 @@ const ApplicationView = () => {
             >
               How Report is Created by AI
             </a>
+          </div>
+          <div className="italic">
+            Paste or upload your .txt Container log files...
           </div>
         </div>
       )}

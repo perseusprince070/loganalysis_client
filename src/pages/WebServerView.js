@@ -89,34 +89,35 @@ const WebserverView = () => {
       {chatlogs.length > 0 ? (
         <ChatBox logs={chatlogs} />
       ) : (
-        <div className="text-center w-[60vw]">
-          <div className="grid-rows-4 grid">
-            <p className="text-[36px] font-bold">
-              LogGPT <sup>&reg;</sup>
-            </p>
-            <p className="text-[24px] font-bold">
-              Generative AI for Advanced Web Server Log Trouble-Shooting
-            </p>
-            <p className="italic text-[20px]">
-              Unlock swift, comprehensive log  insights and actionable solutions
-              powered by ChatGPT
-            </p>
-            <div className="flex gap-[20px] mx-auto">
-              <a
-                href="/sample-report"
-                target="_blank"
-                className="underline text-[blue]"
-              >
-                View Sample AI Report
-              </a>
-              <a
-                href="/how-report"
-                target="_blank"
-                className="underline text-[blue]"
-              >
-                How Report is Created by AI
-              </a>
-            </div>
+        <div className="text-center w-[60vw] grid-rows-5 grid">
+          <p className="text-[36px] font-bold">
+            LogGPT <sup>&reg;</sup>
+          </p>
+          <p className="text-[24px] font-bold">
+            Generative AI for Advanced Web Server Log Trouble-Shooting
+          </p>
+          <p className="italic text-[20px]">
+            Unlock swift, comprehensive log  insights and actionable solutions
+            powered by ChatGPT
+          </p>
+          <div className="flex gap-[20px] mx-auto">
+            <a
+              href="/sample-report"
+              target="_blank"
+              className="underline text-[blue]"
+            >
+              View Sample AI Report
+            </a>
+            <a
+              href="/how-report"
+              target="_blank"
+              className="underline text-[blue]"
+            >
+              How Report is Created by AI
+            </a>
+          </div>
+          <div className="italic">
+            Paste or upload your .txt Container log files...
           </div>
         </div>
       )}
