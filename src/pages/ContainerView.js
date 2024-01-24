@@ -118,7 +118,7 @@ const ContainerView = () => {
             </a>
           </div>
           <div className="italic">
-            Paste or upload your .txt Container log files...
+            Paste or upload your .txt log file to begin
           </div>
         </div>
       )}
