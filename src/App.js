@@ -21,23 +21,18 @@ function App() {
         <Route index path="/" element={<Home />} />
         <Route element={<DefaultLayout />}>
           <Route path="/container" element={<ContainerView />} />
-          <Route path="/container-help" element={<ContainerFAQView />} />
-
           <Route path="/system" element={<SystemView />} />
-          <Route path="/system-help" element={<SystemFAQView />} />
-
           <Route path="/application" element={<ApplicationView />} />
-          <Route path="/application-help" element={<ApplicationFAQView />} />
-
           <Route path="/webserver" element={<WebServerView />} />
-          <Route path="/webserver-help" element={<WebServerFAQView />} />
-
-          <Route path="/sample-report" element={<SampleReport />} />
-          <Route path="/how-report" element={<HowReport />} />
-
-          <Route path="/data-privacy" element={<DataPrivacy />} />
-          <Route path="/faq" element={<FAQ />} />
         </Route>
+        <Route path="/container-help" element={<ContainerFAQView />} />
+        <Route path="/system-help" element={<SystemFAQView />} />
+        <Route path="/application-help" element={<ApplicationFAQView />} />
+        <Route path="/webserver-help" element={<WebServerFAQView />} />
+        <Route path="/sample-report" element={<SampleReport />} />
+        <Route path="/how-report" element={<HowReport />} />
+        <Route path="/data-privacy" element={<DataPrivacy />} />
+        <Route path="/faq" element={<FAQ />} />
       </Routes>
     </BrowserRouter>
   );

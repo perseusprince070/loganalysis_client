@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faComment,
@@ -16,6 +16,9 @@ function classNames(...classes) {
 }
 
 const Appbar = () => {
+  const location = useLocation();
+  const pathname = location.pathname;
+
   return (
     <div className="shadow-sm z-10 p-[8px] w-[100vw] top-0 bg-white flex items-center justify-between">
       <div className="flex gap-[20px] w-[250px]">
@@ -44,14 +47,46 @@ const Appbar = () => {
               alt="LogSenseAI Logo"
               className="w-[40px] h-[40ox]"
             />
-            Open Sense AI
+            Log Sense AI
           </div>
         </Link>
       </div>
-      <div className="text-[27px] font-medium">
-        <span className="font-bold text-[#002060]">Container Log</span>GPT
-        <sup>&nbsp;&reg;</sup>&nbsp; Analyzer
-      </div>
+      {pathname === '/container' ? (
+        <div className="text-[27px] font-medium">
+          <span className="font-bold text-[#002060]">Container Log</span>
+          <span className="text-[#002060]">
+            GPT
+            <sup>&nbsp;&reg;</sup>Analyzer
+          </span>
+        </div>
+      ) : pathname === '/system' ? (
+        <div className="text-[27px] font-medium">
+          <span className="font-bold text-[#002060]">System Log</span>
+          <span className="text-[#002060]">
+            GPT
+            <sup>&nbsp;&reg;</sup>Analyzer
+          </span>
+        </div>
+      ) : pathname === '/application' ? (
+        <div className="text-[27px] font-medium">
+          <span className="font-bold text-[#002060]">Application Log</span>
+          <span className="text-[#002060]">
+            GPT
+            <sup>&nbsp;&reg;</sup>Analyzer
+          </span>
+        </div>
+      ) : pathname === '/webserver' ? (
+        <div className="text-[27px] font-medium">
+          <span className="font-bold text-[#002060]">Web Server Log</span>
+          <span className="text-[#002060]">
+            GPT
+            <sup>&nbsp;&reg;</sup>Analyzer
+          </span>
+        </div>
+      ) : (
+        ''
+      )}
+
       <div className="w-[250px] flex justify-end">
         <Menu as="div" className="relative inline-block text-left ">
           <div>
@@ -131,18 +166,65 @@ const Appbar = () => {
                   )}
                 </Menu.Item>
                 <Menu.Item>
-                  {({ active }) => (
-                    <a
-                      href="#"
-                      className={classNames(
-                        active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                        'block px-4 py-2 text-sm'
-                      )}
-                    >
-                      <FontAwesomeIcon icon={faQuestion} size="xl" />
-                      &nbsp; Help & FAQs
-                    </a>
-                  )}
+                  {({ active }) =>
+                    pathname === '/container' ? (
+                      <a
+                        href="/container-help"
+                        target="_blank"
+                        className={classNames(
+                          active
+                            ? 'bg-gray-100 text-gray-900'
+                            : 'text-gray-700',
+                          'block px-4 py-2 text-sm'
+                        )}
+                      >
+                        <FontAwesomeIcon icon={faQuestion} size="xl" />
+                        &nbsp; Help & FAQs
+                      </a>
+                    ) : pathname === '/system' ? (
+                      <a
+                        href="/system-help"
+                        target="_blank"
+                        className={classNames(
+                          active
+                            ? 'bg-gray-100 text-gray-900'
+                            : 'text-gray-700',
+                          'block px-4 py-2 text-sm'
+                        )}
+                      >
+                        <FontAwesomeIcon icon={faQuestion} size="xl" />
+                        &nbsp; Help & FAQs
+                      </a>
+                    ) : pathname === '/application' ? (
+                      <a
+                        href="/application-help"
+                        target="_blank"
+                        className={classNames(
+                          active
+                            ? 'bg-gray-100 text-gray-900'
+                            : 'text-gray-700',
+                          'block px-4 py-2 text-sm'
+                        )}
+                      >
+                        <FontAwesomeIcon icon={faQuestion} size="xl" />
+                        &nbsp; Help & FAQs
+                      </a>
+                    ) : pathname === '/webserver' ? (
+                      <a
+                        href="/webserver-help"
+                        target="_blank"
+                        className={classNames(
+                          active
+                            ? 'bg-gray-100 text-gray-900'
+                            : 'text-gray-700',
+                          'block px-4 py-2 text-sm'
+                        )}
+                      >
+                        <FontAwesomeIcon icon={faQuestion} size="xl" />
+                        &nbsp; Help & FAQs
+                      </a>
+                    ) : null
+                  }
                 </Menu.Item>
               </div>
             </Menu.Items>
