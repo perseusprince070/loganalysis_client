@@ -8,3 +8,6 @@ dd {
   @apply my-3;
 }
 
+* {
+  font-family: 'Poppins', sans-serif;
+}

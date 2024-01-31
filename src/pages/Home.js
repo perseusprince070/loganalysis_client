@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <div className="m-0 p-0 text-[#333] font-sans">
+    <div className="m-0 p-0 text-[#333]">
       <header className="bg-[#00B0F0] text-[#fff] text-center flex items-center gap-5 justify-center">
         <img
           src="/log_sense_logo.png"

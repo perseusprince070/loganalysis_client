@@ -19,10 +19,9 @@ module.exports = {
         square: 'square',
       },
       fontFamily: {
-        sans: ['arial', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
       },
     },
   },
   plugins: [],
 };
-
