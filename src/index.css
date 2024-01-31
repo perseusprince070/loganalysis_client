@@ -11,3 +11,8 @@ dd {
 * {
   font-family: 'Poppins', sans-serif;
 }
+
+div::placeholder {
+  color: gray;
+  font-style: italic;
+}

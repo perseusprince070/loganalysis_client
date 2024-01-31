@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import ChatBox from '../components/ChatBox';
+import 'animate.css';
 
 const ContainerView = () => {
   const [chatlogs, setChatLogs] = useState([]);
@@ -14,7 +15,7 @@ const ContainerView = () => {
   const promptRef = useRef(null);
 
   const txt =
-    'Experience the power of Generative AI for Advanced System Log Troubleshooting powered by Open AI';
+    'Experience the power of Generative AI for Advanced Container Log Troubleshooting powered by Open AI';
   const speed = 50;
 
   useEffect(() => {
@@ -98,7 +99,7 @@ const ContainerView = () => {
           >
             {typedText}
           </p>
-          <div className="italic">
+          <div className="animate__animated animate__pulse">
             Paste or upload your .txt log file to begin
           </div>
         </div>
@@ -165,13 +166,18 @@ const ContainerView = () => {
             onClick={() => fileRef.current.click()}
           >
             <svg
-              className="scale-[1.25] md:scale-[1]"
               width="24"
               height="24"
-              fill="#000"
-              viewBox="0 0 16 16"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
             >
-              <path d="M13.735 8.291l-5.319 5.315a3.89 3.89 0 11-5.5-5.502L9.28 1.76a2.593 2.593 0 113.666 3.668l-.011.01-6.21 5.977a.776.776 0 01-1.263-.277.778.778 0 01.185-.844l6.203-5.97a1.037 1.037 0 10-1.471-1.463L4.016 9.204a2.334 2.334 0 103.3 3.3l5.32-5.315a.78.78 0 011.101 1.101l-.002.001z"></path>
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M9 7C9 4.23858 11.2386 2 14 2C16.7614 2 19 4.23858 19 7V15C19 18.866 15.866 22 12 22C8.13401 22 5 18.866 5 15V9C5 8.44772 5.44772 8 6 8C6.55228 8 7 8.44772 7 9V15C7 17.7614 9.23858 20 12 20C14.7614 20 17 17.7614 17 15V7C17 5.34315 15.6569 4 14 4C12.3431 4 11 5.34315 11 7V15C11 15.5523 11.4477 16 12 16C12.5523 16 13 15.5523 13 15V9C13 8.44772 13.4477 8 14 8C14.5523 8 15 8.44772 15 9V15C15 16.6569 13.6569 18 12 18C10.3431 18 9 16.6569 9 15V7Z"
+                fill="currentColor"
+              ></path>
             </svg>
           </div>
           <input
@@ -183,26 +189,50 @@ const ContainerView = () => {
             onClick={() => (fileRef.current.value = null)}
             onChange={(event) => setAttachments(Array.from(event.target.files))}
           />
+
+          <label
+            for="editableDiv"
+            id="placeholderDiv"
+            className="text-gray-400 absolute left-14 top-[8px] z-10"
+          >
+            Paste or upload your .txt log file here to begin
+          </label>
           <div
+            id="editableDiv"
             ref={promptRef}
-            className="w-full outline-none overflow-auto resize-none my-auto max-h-24 text-wrap bg-transparent mx-3"
+            onInput={() => {
+              if (promptRef.current.innerText) {
+                console.log(promptRef.current.innerText);
+                document.getElementById('placeholderDiv').style.display =
+                  'none';
+              } else {
+                document.getElementById('placeholderDiv').style.display =
+                  'block';
+              }
+            }}
+            onFocus={() => console.log(promptRef.current.innerText)}
+            className="w-full outline-none overflow-auto resize-none my-auto max-h-24 text-wrap bg-transparent mx-3 z-20"
+            placeholder="Enter some text here..."
             contentEditable
           />
-          <button className="bottom-0" type="submit" disabled={isDiable}>
+          <button
+            className="bottom-0 p-[2px] hover:bg-[#5a5a5a] rounded-md bg-black text-white"
+            type="submit"
+            disabled={isDiable}
+          >
             <svg
               width="36"
               height="36"
               viewBox="-1.92 -1.92 27.84 27.84"
               fill="none"
               stroke="#000000"
-              transform="matrix(1, 0, 0, 1, 0, 0)rotate(0)"
             >
               <path
-                d="M11.5003 12H5.41872M5.24634 12.7972L4.24158 15.7986C3.69128 17.4424 3.41613 18.2643 3.61359 18.7704C3.78506 19.21 4.15335 19.5432 4.6078 19.6701C5.13111 19.8161 5.92151 19.4604 7.50231 18.7491L17.6367 14.1886C19.1797 13.4942 19.9512 13.1471 20.1896 12.6648C20.3968 12.2458 20.3968 11.7541 20.1896 11.3351C19.9512 10.8529 19.1797 10.5057 17.6367 9.81135L7.48483 5.24303C5.90879 4.53382 5.12078 4.17921 4.59799 4.32468C4.14397 4.45101 3.77572 4.78336 3.60365 5.22209C3.40551 5.72728 3.67772 6.54741 4.22215 8.18767L5.24829 11.2793C5.34179 11.561 5.38855 11.7019 5.407 11.8459C5.42338 11.9738 5.42321 12.1032 5.40651 12.231C5.38768 12.375 5.34057 12.5157 5.24634 12.7972Z"
-                stroke="#000"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+                d="M7 11L12 6L17 11M12 18V7"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
               ></path>
             </svg>
           </button>
