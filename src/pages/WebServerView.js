@@ -1,82 +1,83 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import ChatBox from '../components/ChatBox';
-
-// let chatlogs = [];
 
 const WebserverView = () => {
   const [chatlogs, setChatLogs] = useState([]);
   const [attachments, setAttachments] = useState([]);
   const [report, setReport] = useState(true);
   const [isDiable, setIsDisable] = useState(false);
-  const [isNewChat, setIsNewChat] = useState(false);
+  const [typedText, setTypedText] = useState('');
+  const [index, setIndex] = useState(0);
 
   const fileRef = useRef(null);
   const promptRef = useRef(null);
 
-  const location = useLocation();
-  const pathname = location.pathname;
-  const navigateTo = useNavigate();
+  const txt =
+    'Experience the power of Generative AI for Advanced System Log Troubleshooting powered by Open AI';
+  const speed = 50;
+
+  useEffect(() => {
+    if (index < txt.length) {
+      setTimeout(() => {
+        setTypedText(typedText + txt.charAt(index));
+        setIndex(index + 1);
+      }, speed);
+    }
+  }, [index, typedText, txt]);
 
   const handleSubmit = async (event) => {
-    if (isNewChat) {
-      console.log('New Chat');
-      navigateTo(pathname);
-      setIsNewChat(false);
-    } else {
-      event.preventDefault();
-      console.log('>>> Submit');
-      console.log(promptRef.current.innerText);
-      setAttachments([]);
+    event.preventDefault();
+    console.log('>>> Submit');
+    console.log(promptRef.current.innerText);
+    setAttachments([]);
 
-      setIsDisable(true);
+    setIsDisable(true);
 
-      const newLog = {
-        role: 'user',
-        content: promptRef.current.innerText,
-        attachments: attachments,
-      };
-      const loading = { role: 'assistant', content: null };
+    const newLog = {
+      role: 'user',
+      content: promptRef.current.innerText,
+      attachments: attachments,
+    };
+    const loading = { role: 'assistant', content: null };
 
-      setChatLogs([...chatlogs, newLog, loading]);
-      promptRef.current.innerText = '';
+    setChatLogs([...chatlogs, newLog, loading]);
+    promptRef.current.innerText = '';
 
-      const formData = new FormData();
-      [...chatlogs, newLog, loading].forEach((log) => {
-        formData.append(
-          'prompt',
-          JSON.stringify({ role: log.role, content: log.content })
-        );
-      });
-      formData.append('report', report);
-      attachments.forEach((attach) => {
-        formData.append('attachments', attach);
-      });
-
-      const res = await fetch(
-        `${process.env.REACT_APP_API_ROOT}/v1/chat/webserver`,
-        {
-          // const res = await fetch(`/v1/chat/webserver`, {
-          method: 'POST',
-          body: formData,
-        }
+    const formData = new FormData();
+    [...chatlogs, newLog, loading].forEach((log) => {
+      formData.append(
+        'prompt',
+        JSON.stringify({ role: log.role, content: log.content })
       );
+    });
+    formData.append('report', report);
+    attachments.forEach((attach) => {
+      formData.append('attachments', attach);
+    });
 
-      const reader = res.body.getReader();
-      const decoder = new TextDecoder();
-      let msg = '';
-      while (true) {
-        const { done, value: chunk } = await reader.read();
-        if (done) break;
-        const decodedValue = decoder.decode(chunk);
-        msg += decodedValue;
-        console.log(decodedValue);
-        setChatLogs([...chatlogs, newLog, { role: 'assistant', content: msg }]);
+    const res = await fetch(
+      `${process.env.REACT_APP_API_ROOT}/v1/chat/webserver`,
+      {
+        // const res = await fetch(`/v1/chat/webserver`, {
+        method: 'POST',
+        body: formData,
       }
+    );
 
-      setIsDisable(false);
+    const reader = res.body.getReader();
+    const decoder = new TextDecoder();
+    let msg = '';
+    while (true) {
+      const { done, value: chunk } = await reader.read();
+      if (done) break;
+      const decodedValue = decoder.decode(chunk);
+      msg += decodedValue;
+      console.log(decodedValue);
+      setChatLogs([...chatlogs, newLog, { role: 'assistant', content: msg }]);
     }
+
+    setIsDisable(false);
   };
 
   console.log(chatlogs);
@@ -89,33 +90,13 @@ const WebserverView = () => {
       {chatlogs.length > 0 ? (
         <ChatBox logs={chatlogs} />
       ) : (
-        <div className="text-center w-[60vw] grid-rows-5 grid">
-          <p className="text-[36px] font-bold">
-            LogGPT <sup>&reg;</sup>
+        <div className="text-center flex flex-col gap-10 absolute top-[30%]">
+          <p
+            className="w-[700px] text-[35px] font-bold text-[#002060]"
+            id="first-line"
+          >
+            {typedText}
           </p>
-          <p className="text-[24px] font-bold">
-            Generative AI for Advanced Web Server Log Trouble-Shooting
-          </p>
-          <p className="italic text-[20px]">
-            Unlock swift, comprehensive log  insights and actionable solutions
-            powered by ChatGPT
-          </p>
-          <div className="flex gap-[20px] mx-auto">
-            <a
-              href="/sample-report"
-              target="_blank"
-              className="underline text-[blue]"
-            >
-              View Sample AI Report
-            </a>
-            <a
-              href="/how-report"
-              target="_blank"
-              className="underline text-[blue]"
-            >
-              How Report is Created by AI
-            </a>
-          </div>
           <div className="italic">
             Paste or upload your .txt log file to begin
           </div>
@@ -126,43 +107,7 @@ const WebserverView = () => {
         onSubmit={handleSubmit}
         className="w-[70vw] border-[1px] border-black rounded-lg absolute ;lg:bottom-5 md:bottom-5 sm:bottom-5 -bottom-16 px-3 py-2"
       >
-        <div className="absolute left-0 -top-10">
-          <button
-            className="bottom-0 flex flex-row items-center"
-            onClick={() => setIsNewChat(true)}
-          >
-            <svg
-              width="36"
-              height="36"
-              viewBox="-1.92 -1.92 27.84 27.84"
-              fill="none"
-              stroke="#000000"
-              transform="matrix(1, 0, 0, 1, 0, 0)rotate(0)"
-            >
-              <path
-                d="M8 10.5H16"
-                stroke="#1C274C"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-              ></path>
-              <path
-                d="M8 14H13.5"
-                stroke="#1C274C"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-              ></path>
-              <path
-                d="M17 3.33782C15.5291 2.48697 13.8214 2 12 2C6.47715 2 2 6.47715 2 12C2 13.5997 2.37562 15.1116 3.04346 16.4525C3.22094 16.8088 3.28001 17.2161 3.17712 17.6006L2.58151 19.8267C2.32295 20.793 3.20701 21.677 4.17335 21.4185L6.39939 20.8229C6.78393 20.72 7.19121 20.7791 7.54753 20.9565C8.88837 21.6244 10.4003 22 12 22C17.5228 22 22 17.5228 22 12C22 10.1786 21.513 8.47087 20.6622 7"
-                stroke="#1C274C"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-              ></path>
-            </svg>
-            <span className="w-full text-ellipsis">New Analysis</span>
-          </button>
-        </div>
-
-        <div className="absolute right-0 -top-8">
+        {/* <div className="absolute right-0 -top-8">
           <input
             type="checkbox"
             id="report"
@@ -173,7 +118,7 @@ const WebserverView = () => {
           <label htmlFor="report" className="ml-2">
             Analyze Log & Create Report
           </label>
-        </div>
+        </div> */}
 
         <div className="h-2/3 flex mb-2">
           {attachments.map((file, idx) => (
