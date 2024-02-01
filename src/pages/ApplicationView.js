@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import ChatBox from '../components/ChatBox';
+import 'animate.css';
 
 const ApplicationView = () => {
   const [chatlogs, setChatLogs] = useState([]);
@@ -96,7 +97,7 @@ const ApplicationView = () => {
           >
             {typedText}
           </p>
-          <div className="italic">
+          <div className="animate__animated animate__pulse animate-pulse mt--custom">
             Paste or upload your .txt log file to begin
           </div>
         </div>

@@ -21,6 +21,18 @@ module.exports = {
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
       },
+      keyframes: {
+        pulse: {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.05)' },
+        },
+      },
+      animation: {
+        pulse: 'pulse 2s infinite',
+      },
+      margin: {
+        '-custom': '-30px',
+      },
     },
   },
   plugins: [],
