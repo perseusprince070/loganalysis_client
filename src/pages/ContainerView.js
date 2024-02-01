@@ -109,7 +109,7 @@ const ContainerView = () => {
         onSubmit={handleSubmit}
         className="w-[70vw] border-[1px] border-black rounded-lg absolute ;lg:bottom-5 md:bottom-5 sm:bottom-5 -bottom-16 px-3 py-2"
       >
-        {/* <div className="absolute right-0 -top-8">
+        <div className="absolute right-0 -top-8">
           <input
             type="checkbox"
             id="report"
@@ -120,7 +120,7 @@ const ContainerView = () => {
           <label htmlFor="report" className="ml-2">
             Analyze Log & Create Report
           </label>
-        </div> */}
+        </div>
 
         <div className="h-2/3 flex mb-2">
           {attachments.map((file, idx) => (
