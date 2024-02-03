@@ -19,12 +19,26 @@ const Appbar = () => {
   const location = useLocation();
   const pathname = location.pathname;
 
+  const handleNewChat = () => {
+    console.log(pathname);
+    if (pathname === '/container') {
+      window.location = '/container';
+    } else if (pathname === '/application') {
+      window.location = '/application';
+    } else if (pathname === '/system') {
+      window.location = '/system';
+    } else if (pathname === '/webserver') {
+      window.location = '/webserver';
+    }
+  };
+
   return (
     <div className="shadow-sm z-10 p-[8px] w-[100vw] top-0 bg-white flex items-center justify-between">
       <div className="flex gap-[20px] w-[250px]">
         <button
-          // onClick={''}
+          onClick={handleNewChat}
           className="w-[40px] h-[40px] ml-[15px] border-[1px] border-[#a7a2a2] rounded p-2 hover:bg-gray-200"
+          title="Start new log analysis"
         >
           <svg
             width="24"
