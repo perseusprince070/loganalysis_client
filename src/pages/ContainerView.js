@@ -109,34 +109,34 @@ const ContainerView = () => {
         onSubmit={handleSubmit}
         className="w-[70vw] border-[1px] border-black rounded-lg absolute ;lg:bottom-5 md:bottom-5 sm:bottom-5 -bottom-16 px-3 py-2"
       >
-        <div className="flex flex-row gap-5 absolute -top-8">
+        <div className="flex flex-row gap-5 absolute lg:-top-8 max-w-[75%]">
           <div className="flex items-center">
-            <input type="checkbox" id="flexCheckDefault" className="size-4" />
-            <label htmlFor="flexCheckDefault" className="ml-2">
+            <input type="checkbox" id="flexCheckDefault1" className="size-4" />
+            <label htmlFor="flexCheckDefault1" className="ml-2">
               Error Insights & Solutions
             </label>
           </div>
           <div className="flex items-center">
-            <input type="checkbox" id="flexCheckDefault" className="size-4" />
-            <label htmlFor="flexCheckDefault" className="ml-2">
+            <input type="checkbox" id="flexCheckDefault2" className="size-4" />
+            <label htmlFor="flexCheckDefault2" className="ml-2">
               Performance Insights
             </label>
           </div>
           <div className="flex items-center">
-            <input type="checkbox" id="flexCheckDefault" className="size-4" />
-            <label htmlFor="flexCheckDefault" className="ml-2">
+            <input type="checkbox" id="flexCheckDefault3" className="size-4" />
+            <label htmlFor="flexCheckDefault3" className="ml-2">
               Full Analysis Report
             </label>
           </div>
           <div className="flex items-center">
-            <input type="checkbox" id="flexCheckDefault" className="size-4" />
-            <label htmlFor="flexCheckDefault" className="ml-2">
+            <input type="checkbox" id="flexCheckDefault4" className="size-4" />
+            <label htmlFor="flexCheckDefault4" className="ml-2">
               Interactive Query
             </label>
           </div>
         </div>
 
-        <div className="absolute right-0 -top-8">
+        <div className="absolute right-0 -top-8 flex items-center">
           <input
             type="checkbox"
             id="report"
