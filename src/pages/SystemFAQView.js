@@ -5,7 +5,7 @@ const SystemFAQView = () => {
   return (
     <div className="leading-7 m-5 font-sans">
       <Helmet>
-        <title>Log Sense AI | System Log Help</title>
+        <title>System Log Help</title>
       </Helmet>
       <h1 className="text-h1 font-bold mb-5 text-[#333]">
         User Help Page for AI System Log Analysis Tool

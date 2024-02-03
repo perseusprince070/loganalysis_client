@@ -5,7 +5,7 @@ const HowReport = () => {
   return (
     <div className="leading-7 m-5 font-sans">
       <Helmet>
-        <title>Log Sense AI | Create Report</title>
+        <title>Create Report</title>
       </Helmet>
       <h1 className="text-h1 font-bold mb-5 text-[#333]">
         LogGPT Report Breakdown: Harnessing Generative AI for Comprehensive IT

@@ -5,7 +5,7 @@ const ContainerFAQView = () => {
   return (
     <div className="leading-7 m-5 font-sans">
       <Helmet>
-        <title>Log Sense AI | Container Log Help</title>
+        <title>Container Log Help</title>
       </Helmet>
       <h1 className="text-h1 font-bold mb-5 text-[#333]">
         User Help Page for AI Container Log Analysis Tool

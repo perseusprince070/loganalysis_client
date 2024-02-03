@@ -86,7 +86,7 @@ const WebserverView = () => {
   return (
     <div className="flex flex-col place-items-center">
       <Helmet>
-        <title>Log Sense AI | Web Server Log Analyzer</title>
+        <title>Web Server LogGPT</title>
       </Helmet>
       {chatlogs.length > 0 ? (
         <ChatBox logs={chatlogs} />

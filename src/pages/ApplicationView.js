@@ -85,7 +85,7 @@ const ApplicationView = () => {
   return (
     <div className="flex flex-col place-items-center">
       <Helmet>
-        <title>Log Sense AI | Application Log Analyzer</title>
+        <title>Application LogGPT</title>
       </Helmet>
       {chatlogs.length > 0 ? (
         <ChatBox logs={chatlogs} />

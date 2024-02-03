@@ -87,7 +87,7 @@ const ContainerView = () => {
   return (
     <div className="flex flex-col items-center">
       <Helmet>
-        <title>Log Sense AI | Container Log Analyzer</title>
+        <title>Container LogGPT</title>
       </Helmet>
       {chatlogs.length > 0 ? (
         <ChatBox logs={chatlogs} />

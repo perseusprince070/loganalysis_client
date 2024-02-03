@@ -5,7 +5,7 @@ const DataPrivacy = () => {
   return (
     <div className="leading-7 m-5 font-sans">
       <Helmet>
-        <title>Log Sense AI | Data Privacy Policy</title>
+        <title>Data Privacy Policy</title>
       </Helmet>
       <header>
         <h1 className="text-h1 font-bold mb-5 text-[#333]">

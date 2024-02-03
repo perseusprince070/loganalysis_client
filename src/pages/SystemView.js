@@ -86,7 +86,7 @@ const SystemView = () => {
   return (
     <div className="flex flex-col place-items-center">
       <Helmet>
-        <title>Log Sense AI | System Log Analyzer</title>
+        <title>System LogGPT</title>
       </Helmet>
       {chatlogs.length > 0 ? (
         <ChatBox logs={chatlogs} />

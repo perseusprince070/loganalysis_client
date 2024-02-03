@@ -5,7 +5,7 @@ const FAQ = () => {
   return (
     <div className="leading-7 m-5 font-sans">
       <Helmet>
-        <title>Log Sense AI | FAQ</title>
+        <title>FAQ</title>
       </Helmet>
       <h1 className="text-h1 font-bold mb-5 text-[#333]">
         Frequently Asked Questions (FAQs) - AI Log Analysis Tool

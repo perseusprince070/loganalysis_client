@@ -9,7 +9,7 @@ const SampleReport = () => {
   return (
     <div className="leading-7 m-5 font-sans">
       <Helmet>
-        <title>Log Sense AI | Sample Report</title>
+        <title>Sample Report</title>
       </Helmet>
       <h1 className="text-h1 font-bold mb-5 text-[#333]">
         Container Log AI Insight Report
