@@ -195,13 +195,13 @@ export default function Home() {
             </p>
             <div className="flex flex-col items-center justify-between ml-[20px] pt-[20px]">
               <a
-                href="#"
+                href="/how-report"
                 className="flex border-[2px] border-[#0fcefd] w-[250px] mt-[16px] min-h-[70px] text-white rounded-md items-center justify-center bg-transparent text-[16px] text-center p-2 hover:shadow-[0_0_20px_#0fcefd] hover:bg-transparent hover:border-[3px] hover:border-[#0fcefd] hover:transition-all before:duration-150 section-3-buttons"
               >
                 How LogGPT Report is Created by AI
               </a>
               <a
-                href="#"
+                href="/sample-report"
                 className="flex border-[2px] border-[#0fcefd] w-[250px] mt-[16px] min-h-[50px] text-white rounded-md items-center justify-center bg-transparent text-[16px] text-center px-[15px] py-[10px] hover:shadow-[0_0_20px_#0fcefd] hover:bg-transparent hover:border-[3px] hover:border-[#0fcefd] hover:transition-all before:duration-150 btn btn-primary btn-lg section-3-buttons"
               >
                 View Sample LogGPT Report
