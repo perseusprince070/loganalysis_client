@@ -98,7 +98,7 @@ const SystemView = () => {
           >
             {typedText}
           </p>
-          <div className="animate__animated animate__pulse animate-pulse mt--custom">
+          <div className="animate__animated animate__pulse animate-pulse">
             Paste or upload your .txt log file to begin
           </div>
         </div>

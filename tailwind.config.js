@@ -20,6 +20,8 @@ module.exports = {
       },
       fontFamily: {
         poppins: ['Poppins', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
+        tahoma: ['Tahoma', 'sans-serif'],
       },
       keyframes: {
         pulse: {
@@ -28,10 +30,7 @@ module.exports = {
         },
       },
       animation: {
-        pulse: 'pulse 2s infinite',
-      },
-      margin: {
-        '-custom': '-30px',
+        slideinleft: '1s ease-out 0s 1 slideInLeft',
       },
     },
   },

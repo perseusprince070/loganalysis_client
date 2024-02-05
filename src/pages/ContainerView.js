@@ -99,7 +99,7 @@ const ContainerView = () => {
           >
             {typedText}
           </p>
-          <div className="animate__animated animate__pulse animate-pulse mt--custom">
+          <div className="animate__animated animate__pulse animate-pulse">
             Paste or upload your .txt log file to begin
           </div>
         </div>
@@ -109,7 +109,7 @@ const ContainerView = () => {
         onSubmit={handleSubmit}
         className="w-[70vw] border-[1px] border-black rounded-lg absolute ;lg:bottom-5 md:bottom-5 sm:bottom-5 -bottom-16 px-3 py-2"
       >
-        <div className="flex flex-row gap-5 absolute lg:-top-8 max-w-[75%]">
+        <div className="flex w-full justify-center gap-5">
           <div className="flex items-center">
             <input type="checkbox" id="flexCheckDefault1" className="size-4" />
             <label htmlFor="flexCheckDefault1" className="ml-2">
@@ -123,7 +123,13 @@ const ContainerView = () => {
             </label>
           </div>
           <div className="flex items-center">
-            <input type="checkbox" id="flexCheckDefault3" className="size-4" />
+            <input
+              type="checkbox"
+              id="flexCheckDefault3"
+              className="size-4"
+              checked={report}
+              onChange={(e) => setReport(e.target.checked)}
+            />
             <label htmlFor="flexCheckDefault3" className="ml-2">
               Full Analysis Report
             </label>
@@ -134,19 +140,6 @@ const ContainerView = () => {
               Interactive Query
             </label>
           </div>
-        </div>
-
-        <div className="absolute right-0 -top-8 flex items-center">
-          <input
-            type="checkbox"
-            id="report"
-            className="size-4"
-            checked={report}
-            onChange={(e) => setReport(e.target.checked)}
-          />
-          <label htmlFor="report" className="ml-2">
-            Analyze Log & Create Report
-          </label>
         </div>
 
         <div className="h-2/3 flex mb-2">
@@ -243,7 +236,7 @@ const ContainerView = () => {
             contentEditable
           />
           <button
-            className="bottom-0 p-[2px] hover:bg-[#5a5a5a] rounded-md bg-black text-white"
+            className="p-[2px] hover:bg-[#5a5a5a] rounded-md bg-black text-white"
             type="submit"
             disabled={isDiable}
           >

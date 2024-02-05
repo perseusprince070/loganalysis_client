@@ -97,7 +97,7 @@ const ApplicationView = () => {
           >
             {typedText}
           </p>
-          <div className="animate__animated animate__pulse animate-pulse mt--custom">
+          <div className="animate__animated animate__pulse animate-pulse">
             Paste or upload your .txt log file to begin
           </div>
         </div>
@@ -145,6 +145,44 @@ const ApplicationView = () => {
           <label htmlFor="report" className="ml-2">
             Analyze Log & Create Report
           </label>
+        </div>
+
+        <div className="h-2/3 flex mb-2">
+          {attachments.map((file, idx) => (
+            <div
+              key={idx}
+              className="bg-slate-200 p-2 rounded-lg mr-2 flex relative group"
+            >
+              <svg
+                fill="#ffffff"
+                viewBox="0 -8 72 72"
+                stroke="#ffffff"
+                className="size-8 p-1 bg-pink-600 rounded-sm"
+              >
+                <path d="M47.76,36.76H23.28a1.08,1.08,0,1,0,0,2.16H47.76a1.08,1.08,0,0,0,0-2.16Z"></path>
+                <path d="M47.76,22.6H23.28a1.08,1.08,0,1,0,0,2.16H47.76a1.08,1.08,0,1,0,0-2.16Z"></path>
+                <path d="M46.92,0H18.74A3.44,3.44,0,0,0,15.3,3.43V52.57A3.44,3.44,0,0,0,18.74,56H53.26a3.44,3.44,0,0,0,3.44-3.43V10.62Zm.81,5.14L52,9.79H47.73Zm6.08,47.43a.55.55,0,0,1-.55.55H18.74a.55.55,0,0,1-.55-.55V3.43a.54.54,0,0,1,.55-.54H44.85v8.35a1.45,1.45,0,0,0,1.44,1.44h7.52Z"></path>
+                <path d="M47.76,29.62H23.28a1.08,1.08,0,1,0,0,2.16H47.76a1.08,1.08,0,1,0,0-2.16Z"></path>
+              </svg>
+              <p className="ml-3 mr-4 my-auto text-black">{file.name}</p>
+              <button
+                className="group-hover:block hidden z-100 absolute -top-2 -right-2 size-6 bg-slate-300 border-[1px] hover:bg-slate-400 rounded-full"
+                type="button"
+                onClick={() =>
+                  setAttachments(attachments.filter((item) => item !== file))
+                }
+              >
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M10.9393 12L6.9696 15.9697L8.03026 17.0304L12 13.0607L15.9697 17.0304L17.0304 15.9697L13.0607 12L17.0303 8.03039L15.9696 6.96973L12 10.9393L8.03038 6.96973L6.96972 8.03039L10.9393 12Z"
+                    fill="#000"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          ))}
         </div>
 
         <div className="h-1/3 flex relative">
