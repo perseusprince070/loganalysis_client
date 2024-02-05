@@ -6,7 +6,10 @@ import 'animate.css';
 const WebserverView = () => {
   const [chatlogs, setChatLogs] = useState([]);
   const [attachments, setAttachments] = useState([]);
-  const [report, setReport] = useState(true);
+  const [fullAnalysis, setFullAnalysis] = useState(true);
+  const [interactiveQuery, setInteractiveQuery] = useState(false);
+  const [performanceInsights, setPerformanceInsights] = useState(false);
+  const [errorInsights, setErrorInsights] = useState(false);
   const [isDiable, setIsDisable] = useState(false);
   const [typedText, setTypedText] = useState('');
   const [index, setIndex] = useState(0);
@@ -52,7 +55,10 @@ const WebserverView = () => {
         JSON.stringify({ role: log.role, content: log.content })
       );
     });
-    formData.append('report', report);
+    formData.append('fullAnalysis', fullAnalysis);
+    formData.append('interactiveQuery', interactiveQuery);
+    formData.append('performanceInsights', performanceInsights);
+    formData.append('errorInsights', errorInsights);
     attachments.forEach((attach) => {
       formData.append('attachments', attach);
     });
@@ -108,44 +114,67 @@ const WebserverView = () => {
         onSubmit={handleSubmit}
         className="w-[70vw] border-[1px] border-black rounded-lg absolute ;lg:bottom-5 md:bottom-5 sm:bottom-5 -bottom-16 px-3 py-2"
       >
-        <div className="flex flex-row gap-5 absolute lg:-top-8 max-w-[75%]">
+        <div className="flex w-full justify-center gap-5">
           <div className="flex items-center">
-            <input type="checkbox" id="flexCheckDefault1" className="size-4" />
+            <input
+              type="checkbox"
+              id="flexCheckDefault1"
+              className="size-4"
+              checked={errorInsights}
+              onChange={(e) => {
+                setErrorInsights(e.target.checked);
+                console.log('Error Insights');
+              }}
+            />
             <label htmlFor="flexCheckDefault1" className="ml-2">
               Error Insights & Solutions
             </label>
           </div>
           <div className="flex items-center">
-            <input type="checkbox" id="flexCheckDefault2" className="size-4" />
+            <input
+              type="checkbox"
+              id="flexCheckDefault2"
+              className="size-4"
+              checked={performanceInsights}
+              onChange={(e) => {
+                setPerformanceInsights(e.target.checked);
+                console.log('Performance Insights');
+              }}
+            />
             <label htmlFor="flexCheckDefault2" className="ml-2">
               Performance Insights
             </label>
           </div>
           <div className="flex items-center">
-            <input type="checkbox" id="flexCheckDefault3" className="size-4" />
+            <input
+              type="checkbox"
+              id="flexCheckDefault3"
+              className="size-4"
+              checked={fullAnalysis}
+              onChange={(e) => {
+                setFullAnalysis(e.target.checked);
+                console.log('Full Analysis Report');
+              }}
+            />
             <label htmlFor="flexCheckDefault3" className="ml-2">
               Full Analysis Report
             </label>
           </div>
           <div className="flex items-center">
-            <input type="checkbox" id="flexCheckDefault4" className="size-4" />
+            <input
+              type="checkbox"
+              id="flexCheckDefault4"
+              className="size-4"
+              checked={interactiveQuery}
+              onChange={(e) => {
+                setInteractiveQuery(e.target.checked);
+                console.log('Interactive Query');
+              }}
+            />
             <label htmlFor="flexCheckDefault4" className="ml-2">
               Interactive Query
             </label>
           </div>
-        </div>
-
-        <div className="absolute right-0 -top-8 flex items-center">
-          <input
-            type="checkbox"
-            id="report"
-            className="size-4"
-            checked={report}
-            onChange={(e) => setReport(e.target.checked)}
-          />
-          <label htmlFor="report" className="ml-2">
-            Analyze Log & Create Report
-          </label>
         </div>
 
         <div className="h-2/3 flex mb-2">
