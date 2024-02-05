@@ -6,13 +6,18 @@ import 'animate.css';
 const WebserverView = () => {
   const [chatlogs, setChatLogs] = useState([]);
   const [attachments, setAttachments] = useState([]);
-  const [fullAnalysis, setFullAnalysis] = useState(true);
-  const [interactiveQuery, setInteractiveQuery] = useState(false);
-  const [performanceInsights, setPerformanceInsights] = useState(false);
-  const [errorInsights, setErrorInsights] = useState(false);
+  const [selectedOption, setSelectedOption] = useState(null);
+
   const [isDiable, setIsDisable] = useState(false);
   const [typedText, setTypedText] = useState('');
   const [index, setIndex] = useState(0);
+
+  const AnalysisOptions = {
+    ERROR_INSIGHTS: 'errorInsights',
+    PERFORMANCE_INSIGHTS: 'performanceInsights',
+    FULL_ANALYSIS: 'fullAnalysis',
+    INTERACTIVE_QUERY: 'interactiveQuery',
+  };
 
   const fileRef = useRef(null);
   const promptRef = useRef(null);
@@ -55,10 +60,7 @@ const WebserverView = () => {
         JSON.stringify({ role: log.role, content: log.content })
       );
     });
-    formData.append('fullAnalysis', fullAnalysis);
-    formData.append('interactiveQuery', interactiveQuery);
-    formData.append('performanceInsights', performanceInsights);
-    formData.append('errorInsights', errorInsights);
+    formData.append('report', selectedOption);
     attachments.forEach((attach) => {
       formData.append('attachments', attach);
     });
@@ -120,10 +122,14 @@ const WebserverView = () => {
               type="checkbox"
               id="flexCheckDefault1"
               className="size-4"
-              checked={errorInsights}
+              checked={selectedOption === AnalysisOptions.ERROR_INSIGHTS}
               onChange={(e) => {
-                setErrorInsights(e.target.checked);
-                console.log('Error Insights');
+                setSelectedOption(
+                  selectedOption === AnalysisOptions.ERROR_INSIGHTS
+                    ? null
+                    : AnalysisOptions.ERROR_INSIGHTS
+                );
+                console.log(selectedOption);
               }}
             />
             <label htmlFor="flexCheckDefault1" className="ml-2">
@@ -135,10 +141,14 @@ const WebserverView = () => {
               type="checkbox"
               id="flexCheckDefault2"
               className="size-4"
-              checked={performanceInsights}
+              checked={selectedOption === AnalysisOptions.PERFORMANCE_INSIGHTS}
               onChange={(e) => {
-                setPerformanceInsights(e.target.checked);
-                console.log('Performance Insights');
+                setSelectedOption(
+                  selectedOption === AnalysisOptions.PERFORMANCE_INSIGHTS
+                    ? null
+                    : AnalysisOptions.PERFORMANCE_INSIGHTS
+                );
+                console.log(selectedOption);
               }}
             />
             <label htmlFor="flexCheckDefault2" className="ml-2">
@@ -150,10 +160,14 @@ const WebserverView = () => {
               type="checkbox"
               id="flexCheckDefault3"
               className="size-4"
-              checked={fullAnalysis}
+              checked={selectedOption === AnalysisOptions.FULL_ANALYSIS}
               onChange={(e) => {
-                setFullAnalysis(e.target.checked);
-                console.log('Full Analysis Report');
+                setSelectedOption(
+                  selectedOption === AnalysisOptions.FULL_ANALYSIS
+                    ? null
+                    : AnalysisOptions.FULL_ANALYSIS
+                );
+                console.log(selectedOption);
               }}
             />
             <label htmlFor="flexCheckDefault3" className="ml-2">
@@ -165,10 +179,14 @@ const WebserverView = () => {
               type="checkbox"
               id="flexCheckDefault4"
               className="size-4"
-              checked={interactiveQuery}
+              checked={selectedOption === AnalysisOptions.INTERACTIVE_QUERY}
               onChange={(e) => {
-                setInteractiveQuery(e.target.checked);
-                console.log('Interactive Query');
+                setSelectedOption(
+                  selectedOption === AnalysisOptions.INTERACTIVE_QUERY
+                    ? null
+                    : AnalysisOptions.INTERACTIVE_QUERY
+                );
+                console.log(selectedOption);
               }}
             />
             <label htmlFor="flexCheckDefault4" className="ml-2">
