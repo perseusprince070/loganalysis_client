@@ -22,7 +22,6 @@ function App() {
         <Route element={<DefaultLayout />}>
           <Route path="/container" element={<ContainerView />} />
           <Route path="/container-help" element={<ContainerFAQView />} />
-
           <Route path="/system" element={<SystemView />} />
           <Route path="/system-help" element={<SystemFAQView />} />
 
