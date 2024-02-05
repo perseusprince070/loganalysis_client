@@ -1,288 +1,426 @@
 export default function Home() {
   return (
-    <div className="m-0 p-0 text-[#333] font-sans">
-      <header className="bg-[#00B0F0] text-[#fff] text-center flex items-center gap-5 justify-center">
-        <img
-          src="/log_sense_logo.png"
-          alt="LogSenseAI Logo"
-          className="py-[20px]"
-        />
-        <div className="flex-col">
-          <h1 className="text-h1 font-bold mb-1">
-            Generative AI for Advanced Log Trouble-Shooting
-          </h1>
-          <p className="text-[18px] leading-7">
-            Unlock swift, comprehensive log  insights and actionable solutions
-            powered by ChatGPT
-          </p>
+    <div>
+      <div
+        className="w-full h-[100vh] m-0 p-0 font-inter"
+        style={{
+          backgroundImage: "url('/bg.jpg')",
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+        }}
+      >
+        <br />
+        <div className="flex items-center justify-between w-4/5 rounded-b-[10px] bg-[#08080880] p-5 mx-auto backdrop:blur-[3px]">
+          <a className="flex items-center ml-[25px]" href="/">
+            <img src="/log_sense_logo.png" className="w-[40px] h-[40px]" />
+            <div className="ml-[25px] mr-[10px] text-[#f5f5f5] text-[20px] font-bold font-inter -tracking-wide">
+              Log Sense <span className="text-[#0fcefd]">AI</span>
+            </div>
+          </a>
+          <div className="text-[#f5f5f5] font-bold">
+            <ul className="flex mr-[25px]">
+              <li className="m-[10px]">
+                <a
+                  href="/"
+                  className="relative text-[#f5f5f5] font-bold px-2 hover:text-[#0fcefd] before:content-[''] before:absolute before:-bottom-[7px] before:left-0 before:w-0 before:h-[3px] before:bg-[#0fcefd] before:transition-all before:duration-500 hover:before:w-full"
+                >
+                  Home
+                </a>
+              </li>
+              <li className="m-[10px]">
+                <a
+                  href=""
+                  className="relative text-[#f5f5f5] font-bold px-2 hover:text-[#0fcefd] before:content-[''] before:absolute before:-bottom-[7px] before:left-0 before:w-0 before:h-[3px] before:bg-[#0fcefd] before:transition-all before:duration-500 hover:before:w-full"
+                >
+                  LogGPT
+                </a>
+              </li>
+              <li className="m-[10px]">
+                <a
+                  href=""
+                  className="relative text-[#f5f5f5] font-bold px-2 hover:text-[#0fcefd] before:content-[''] before:absolute before:-bottom-[7px] before:left-0 before:w-0 before:h-[3px] before:bg-[#0fcefd] before:transition-all before:duration-500 hover:before:w-full"
+                >
+                  About Us
+                </a>
+              </li>
+              <li className="m-[10px]">
+                <a
+                  href="mailto:feedback@logsenseai.com"
+                  className="relative text-[#f5f5f5] font-bold px-2 hover:text-[#0fcefd] before:content-[''] before:absolute before:-bottom-[7px] before:left-0 before:w-0 before:h-[3px] before:bg-[#0fcefd] before:transition-all before:duration-500 hover:before:w-full"
+                >
+                  Contact Us
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
-      </header>
 
-      <div className="max-w-[960px] mx-auto p-[20px]">
-        <h2 className="text-h2 font-bold my-5">
-          Discover Our Advanced AI-Driven ChatGPT Log Analysis Solutions -
-          LogGPT
-        </h2>
-        <ul className="list-square ml-10 my-5" style={{ color: 'blue' }}>
-          <li className="my-3">
-            <a
-              href="/container"
-              className="font-bold text-[blue]"
-              target="_blank"
-            >
-              LogGPT for Container Logs
-            </a>
-          </li>
-          <li className="my-3">
-            <a href="/system" className="font-bold text-[blue]" target="_blank">
-              LogGPT for System Logs
-            </a>
-          </li>
-          <li className="my-3">
-            <a
-              href="/application"
-              className="font-bold text-[blue]"
-              target="_blank"
-            >
-              LogGPT for Application Logs
-            </a>
-          </li>
-          <li className="my-3">
-            <a
-              href="/webserver"
-              className="font-bold text-[blue]"
-              target="_blank"
-            >
-              LogGPT for Web Server Logs
-            </a>
-          </li>
-        </ul>
+        <div className="flex flex-col absolute right-[200px] pt-[40px]">
+          <a
+            href="/container"
+            target="_blank"
+            className="flex border-[2px] border-[#0fcefd] w-[250px] mt-[16px] min-h-[50px] text-white rounded-md items-center justify-center bg-transparent text-[16px] hover:shadow-[0_0_20px_#0fcefd] hover:bg-transparent hover:border-[3px] hover:border-[#0fcefd] hover:transition-all before:duration-150"
+          >
+            LogGPT for Container Logs
+          </a>
+          <a
+            href="/system"
+            target="_blank"
+            className="flex border-[2px] border-[#0fcefd] w-[250px] mt-[16px] min-h-[50px] text-white rounded-md items-center justify-center bg-transparent text-[16px] hover:shadow-[0_0_20px_#0fcefd] hover:bg-transparent hover:border-[3px] hover:border-[#0fcefd] hover:transition-all before:duration-150"
+          >
+            LogGPT for System Logs
+          </a>
+          <a
+            href="/application"
+            target="_blank"
+            className="flex border-[2px] border-[#0fcefd] w-[250px] mt-[16px] min-h-[50px] text-white rounded-md items-center justify-center bg-transparent text-[16px] hover:shadow-[0_0_20px_#0fcefd] hover:bg-transparent hover:border-[3px] hover:border-[#0fcefd] hover:transition-all before:duration-150"
+          >
+            LogGPT for Application Logs
+          </a>
+          <a
+            href="/webserver"
+            target="_blank"
+            className="flex border-[2px] border-[#0fcefd] w-[250px] mt-[16px] min-h-[50px] text-white rounded-md items-center justify-center bg-transparent text-[16px] hover:shadow-[0_0_20px_#0fcefd] hover:bg-transparent hover:border-[3px] hover:border-[#0fcefd] hover:transition-all before:duration-150"
+          >
+            LogGPT for Web Server Logs
+          </a>
+        </div>
 
-        <h2 className="text-h2 font-bold my-5">Resources</h2>
-        <ul className="list-square ml-10 my-5" style={{ color: 'blue' }}>
-          <li className="my-3">
-            <a
-              href="/sample-report"
-              className="font-bold text-[blue]"
-              target="_blank"
-            >
-              View Sample LogGPT Report
-            </a>
-          </li>
-          <li className="my-3">
-            <a
-              href="/how-report"
-              className="font-bold text-[blue]"
-              target="_blank"
-            >
-              How the LogGPT Report is Created by AI
-            </a>
-          </li>
-          <li className="my-3">
-            <a href="/faq" className="font-bold text-[blue]" target="_blank">
-              FAQs & Help
-            </a>
-          </li>
-          <li className="my-3">
-            <a
-              href="mailto:feedback@logsenseai.com"
-              className="font-bold text-[blue]"
-            >
-              Contact Us
-            </a>
-          </li>
-        </ul>
+        <div className="flex flex-col text-white h-[200px] w-[453px] absolute right-[100px] border-t-[4px] border-t-white border-r-[4px] border-r-white border-l-[4px] border-l-white rounded-t-[20px] bottom-0 bg-[#00000080] backdrop:blur-[25px] px-[30px]">
+          <div className="">
+            <i
+              // className="content-[''] absolute top-[40px] h-[3px] w-[200px] bg-[#0fcefd] animate-slideinleft"
+              className="content-[''] absolute top-[40px] w-[200px] h-[3px] bg-[#0fcefd]"
+            ></i>
+
+            <h3 className="text-[18px] my-[10px] px-[5px] mb-5">
+              LogGPT - An <span className="text-[#0fcefd]">AI</span> Driven
+              Analysis Solution
+            </h3>
+          </div>
+          <h1 className="text-[32px] leading-[40px]">
+            Generative <span className="text-[#0fcefd]">AI</span> for Advanced
+            Log Trouble-Shooting
+          </h1>
+        </div>
       </div>
-      <div className="bg-[#f4f4f4]">
-        <div className="max-w-[960px] mx-auto p-[20px]">
-          <h1 className="text-h2 font-bold my-5">
-            Introducing LogGPT: Generative AI for Advanced Problem-Solving
-          </h1>
-          <p className="my-3">
-            Your ultimate ally in navigating the complex landscape of log
-            troubleshooting, powered by the unmatched intelligence of ChatGPT
-            generative AI. Transform your data into a dynamic,
-            solution-generating powerhouse with LogGPT, where cutting-edge
-            technology meets deep, analytical problem-solving.
-          </p>
-
-          <h2 className="text-h4 font-bold my-5">Precision Problem-Solving:</h2>
-          <p className="my-3">
-            Engage with LogGPT’s sophisticated AI to dissect, understand, and
-            address the core of each challenge. Our tool doesn’t just skim the
-            surface. It delves deep into your data, unraveling complex patterns
-            and crafting precise, targeted solutions that hit the mark every
-            time.
-          </p>
-
-          <h2 className="text-h4 font-bold my-5">
-            Innovative Solutions, Instantly:
+      <div className="h-[120vh] pt-[35px] text-white bg-black">
+        <div className="flex flex-col text-center">
+          <h2 className="mt-[30px] font-bold text-[#f5f5f5] text-[32px] px-[25px]">
+            Unlock the Future of Log Troubleshooting with&nbsp;
+            <span className="text-[#0fcefd]">LogGPT</span>
           </h2>
-          <p className="my-3">
-            Time is of the essence in the digital world. LogGPT stands out by
-            not just providing solutions but delivering them swiftly. Our
-            AI-driven platform ensures that your operation's flow is maintained
-            by offering quick, effective troubleshooting and innovative
-            solutions at the speed of light.
-          </p>
-
-          <h2 className="text-h4 font-bold my-5">Complexity, Simplified:</h2>
-          <p className="my-3">
-            In the world of logs and data, complexity can be overwhelming.
-            LogGPT is your beacon of clarity. It turns convoluted problems into
-            clear, manageable tasks. Our platform breaks down intricate issues
-            into simple, actionable components, making problem-solving a breeze.
-          </p>
-
-          <h2 className="text-h4 font-bold my-5">
-            Predictive Insights, Proactive Strategies:
-          </h2>
-          <p className="my-3">
-            LogGPT goes beyond reactive measures. It’s a visionary tool that
-            anticipates future challenges, giving you the upper hand. With
-            predictive analytics and proactive strategies, it helps you mitigate
-            potential issues before they arise, ensuring smooth, uninterrupted
-            operations.
-          </p>
-
-          <h2 className="text-h4 font-bold my-5">
-            Continuous Evolution, Consistent Excellence:
-          </h2>
-          <p className="my-3">
-            In the ever-changing digital landscape, stagnation is not an option.
-            LogGPT is built to evolve, continuously learning, adapting to new
-            challenges, and constantly improving its problem-solving strategies
-            to ensure that your operations are always at the forefront of
-            efficiency and innovation.
-          </p>
-
-          <h2 className="text-h4 font-bold my-5">
-            LogGPT: Generative AI for Advanced Problem-Solving
-          </h2>
-          <p className="my-3">
-            Redefine the way you approach troubleshooting and problem-solving.
-            Transform your logs into a strategic asset and let LogGPT propel
-            your operations towards unparalleled efficiency, innovation, and
-            success. The future of problem-solving is here. Embrace it with
-            LogGPT.
-          </p>
-
-          <h1 className="text-h2 font-bold my-5">About Our AI</h1>
-          <p className="my-3">
-            The AI powering our log analysis tool is based on the advanced
-            ChatGPT API model, developed by OpenAI. ChatGPT is renowned for its
-            exceptional language understanding and generation capabilities,
-            making it one of the most sophisticated AI models available today.
-            It's designed to process and analyze large volumes of text data with
-            high accuracy, enabling it to extract meaningful insights from
-            complex log files. Additionally, ChatGPT undergoes rigorous training
-            and continuous updates, ensuring that it stays at the forefront of
-            AI technology and adapts to evolving data patterns and user needs.
-            We have also implemented multiple layers of quality assurance and
-            testing, guaranteeing that the AI's performance remains top-notch.
-            In summary, you can be confident in the AI of our log analysis tool
-            because it is built upon a foundation of proven, state-of-the-art
-            technology that is trusted by industry experts worldwide.
-          </p>
-
-          <h1 className="text-h2 font-bold my-5">Your Data, Your Security</h1>
-          <p className="my-3">
-            Rest assured, your data is safe with us. We prioritize the
-            confidentiality and integrity of your information. Our commitment to
-            your privacy is unwavering, and we implement stringent data security
-            measures to protect your data. We do not store logs or queries
-            beyond your session, ensuring complete privacy. This means that once
-            your session is terminated, your data is erased permanently from our
-            systems.
-          </p>
-
-          <p className="my-3">
-            Furthermore, we firmly state that your data is not utilized for any
-            training purposes to enhance the ChatGPT model or any other AI
-            models. Your data is yours alone. We respect the privacy and
-            proprietary nature of your data, and under no circumstances is it
-            used to train or improve our systems. This approach ensures that
-            your data remains strictly confidential and is not repurposed for
-            any other use.
-          </p>
-
-          <p className="my-3">
-            We are dedicated to maintaining the highest standards of data
-            security and ensuring that your information is safeguarded at all
-            times. If you have any questions or concerns about our data security
-            practices, please do not hesitate to contact us.
-          </p>
-
-          <h1 className="text-h2 font-bold my-5">About Us</h1>
-          <p className="my-3">
-            These AI log analysis tools are developed and maintained by Log
-            Sense AI, a cutting-edge technology firm specializing in artificial
-            intelligence and machine learning solutions. Log Sense AI is known
-            for its expertise in creating intelligent systems that automate
-            complex data analysis tasks, particularly in the realm of IT
-            operations and cloud computing. Their team comprises seasoned data
-            scientists, software engineers, and domain experts who work
-            collaboratively to build tools that are not only technologically
-            advanced but also user-friendly and highly practical in real-world
-            scenarios. With a strong focus on innovation and customer
-            satisfaction, Log Sense AI has established itself as a leader in
-            AI-driven analytics, helping businesses leverage the power of AI to
-            optimize their operations and gain critical insights from their
-            data.
-          </p>
-
-          <h1 className="text-h2 font-bold my-5">Terms of Service</h1>
-          <p className="my-3">
-            The use of LogSenseAI's AI log analysis tool is subject to the
-            following terms and conditions:
-          </p>
-          <ol>
-            <li className="my-3">
-              <strong>No Guarantees:</strong> While our tool is designed to
-              provide valuable insights and assistance, it is essential to
-              understand that log analysis is a complex field. LogSenseAI makes
-              no guarantees or warranties regarding the accuracy, completeness,
-              or correctness of the information provided. The tool's analysis
-              and recommendations are based on available data and patterns and
-              should be used as a reference rather than definitive solutions.
-            </li>
-            <li className="my-3">
-              <strong>User Responsibility:</strong> Users of LogSenseAI are
-              responsible for interpreting and implementing the tool's insights
-              appropriately. It is crucial to exercise judgment and apply the
-              recommendations with consideration of the specific context and
-              environment in which the tool is used.
-            </li>
-            <li className="my-3">
-              <strong>Human Oversight:</strong> LogSenseAI's AI-driven log
-              analysis should not replace human expertise and judgment. Users
-              should maintain human oversight, particularly in critical
-              situations or decisions that may have significant implications.
-            </li>
-            <li className="my-3">
-              <strong>Data Privacy:</strong> We prioritize the security and
-              privacy of your data. LogSenseAI does not retain any logs or
-              queries beyond your session. However, users are encouraged to
-              review and comply with their organization's data security and
-              privacy policies.
-            </li>
-            <li className="my-3">
-              <strong>Best Efforts:</strong> LogSenseAI will make best efforts
-              to provide accurate and timely log analysis results. However, the
-              quality of the analysis may depend on the input data quality and
-              the complexity of the log files. We continually strive to improve
-              our tool and services to deliver the best possible experience to
-              our users.
-            </li>
-          </ol>
-          <p className="my-3">
-            By using LogSenseAI's AI log analysis tool, you acknowledge and
-            agree to these terms and conditions. If you do not agree with these
-            terms, please refrain from using our services. We recommend
-            regularly reviewing this disclaimer for any updates or changes.
-          </p>
-          <p className="my-3">© 2024 LogSenseAI.com. All rights reserved.</p>
+          <img
+            src="/blue-line.png"
+            alt="blue line"
+            className="-mt-[10px] w-[60%] h-[40px] mx-auto"
+          />
         </div>
+        <div className="flex mt-[250px] justify-evenly">
+          <div className="flex h-[450px] w-[450px] items-center text-[20px]">
+            <p className="text-[1.5rem] leading-[1.2]">
+              <span className="text-[#0fcefd]">Experience the future</span> of
+              log analysis with LogGPT, your trusted companion for navigating
+              the complexities of troubleshooting. Powered by cutting-edge AI
+              technology, LogGPT takes log analysis to new heights, providing
+              you with unmatched insights and problem-solving capabilities.
+              Transform your data into a dynamic, solution-generating powerhouse
+              with LogGPT, where cutting-edge technology meets deep, analytical
+              problem-solving.
+            </p>
+          </div>
+          <div className="flex flex-col">
+            <img
+              className="mt-[40px]"
+              alt="AI image"
+              src="/AI2.jpg"
+              width="400"
+              height="400"
+            />
+            <div className="flex justify-end -mr-[50px]">
+              <svg
+                id="corner-decor-1"
+                xmlns="http://www.w3.org/2000/svg"
+                width="88"
+                height="60"
+                viewBox="0 0 88 60"
+                fill="none"
+              >
+                <rect x="80" width="8" height="60" fill="#0fcefd" />
+                <rect
+                  y="60"
+                  width="8"
+                  height="80"
+                  transform="rotate(-90 0 60)"
+                  fill="#0fcefd"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="w-full min-h-[120vh] bg-[#0e1111] text-white pt-[35px] h-auto">
+        <div className="text-center">
+          <h2 className="text-wrap m-[30px] font-bold mb-[70px] text-[32px]">
+            How <span className="text-[#0fcefd]"> LogGPT</span> Works:
+            Harnessing
+            <span className="text-[#0fcefd]"> AI</span> for Precise
+            Troubleshooting
+          </h2>
+          <img
+            src="/blue-line.png"
+            alt="blue line"
+            className="-mt-[80px] w-[60%] h-[40px] mx-auto"
+          />
+        </div>
+        <div className="flex items-center mt-[200px] justify-center">
+          <div className="h-[450px] w-[450px] section-2-3-right-side">
+            <img
+              className=""
+              alt="AI report"
+              src="/AI_Report.png"
+              width="600"
+              height="600"
+            />
+          </div>
+          <div className="h-[450px] w-[520px] flex flex-col justify-center items-center pt-[0px]">
+            <p className="text-[1.5rem]">
+              Discover how
+              <span className="text-[#0fcefd]"> LogGPT's advanced AI</span>{' '}
+              algorithms dive deep into your log data to dissect and understand
+              complex issues. We go beyond surface-level analysis to provide
+              precise, targeted solutions that address the core of each
+              challenge.
+            </p>
+            <div className="flex flex-col items-center justify-between ml-[20px] pt-[20px]">
+              <a
+                href="#"
+                className="flex border-[2px] border-[#0fcefd] w-[250px] mt-[16px] min-h-[70px] text-white rounded-md items-center justify-center bg-transparent text-[16px] text-center p-2 hover:shadow-[0_0_20px_#0fcefd] hover:bg-transparent hover:border-[3px] hover:border-[#0fcefd] hover:transition-all before:duration-150 section-3-buttons"
+              >
+                How LogGPT Report is Created by AI
+              </a>
+              <a
+                href="#"
+                className="flex border-[2px] border-[#0fcefd] w-[250px] mt-[16px] min-h-[50px] text-white rounded-md items-center justify-center bg-transparent text-[16px] text-center px-[15px] py-[10px] hover:shadow-[0_0_20px_#0fcefd] hover:bg-transparent hover:border-[3px] hover:border-[#0fcefd] hover:transition-all before:duration-150 btn btn-primary btn-lg section-3-buttons"
+              >
+                View Sample LogGPT Report
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="w-full min-h-[100vh] bg-[#0fcefd]">
+        <div className="-mb-[50px] pt-[60px] ml-[50px] font-bold text-black">
+          <h2 className="text-[32px]">Key Features of LogGPT</h2>
+        </div>
+        <div className="mt-[100px] ml-[50px]">
+          <ul className="mr-[25px]">
+            <li className="flex bg-[#0e1111] h-auto min-h-[70px] border-[1px] border-black rounded-t-[10px] text-[#f5f5f5] items-center m-3 p-3">
+              <p className="text-[1.25rem]">
+                <span className="text-[#0fcefd] font-bold">
+                  Swift Solutions:
+                </span>{' '}
+                LogGPT doesn't just identify issues; it delivers innovative
+                solutions promptly, ensuring your operations run smoothly.
+              </p>
+            </li>
+            <li className="flex bg-[#0e1111] h-auto min-h-[70px] border-none text-[#f5f5f5] items-center m-3 p-3">
+              <p className="text-[1.25rem]">
+                <span className="text-[#0fcefd] font-bold">
+                  Simplified Complexity:
+                </span>{' '}
+                We simplify intricate log data, making it easy to understand and
+                act upon.
+              </p>
+            </li>
+            <li className="flex bg-[#0e1111] h-auto min-h-[70px] border-none text-[#f5f5f5] items-center m-3 p-3">
+              <p className="text-[1.25rem]">
+                <span className="text-[#0fcefd] font-bold">
+                  Predictive Insights:
+                </span>{' '}
+                Stay ahead of the curve with LogGPT's predictive analytics,
+                enabling proactive troubleshooting.
+              </p>
+            </li>
+            <li className="flex bg-[#0e1111] h-auto min-h-[70px] border-[1px] border-black rounded-b-[10px] text-[#f5f5f5] items-center m-3 p-3">
+              <p className="text-[1.25rem]">
+                <span className="text-[#0fcefd] font-bold">
+                  Continuous Improvement:
+                </span>{' '}
+                Our AI continuously evolves to adapt to new challenges, ensuring
+                consistent excellence.
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="w-full min-h-[90vh] bg-[#0e1111] h-auto pt-[35px] text-white">
+        <div className="text-center">
+          <h2 className="text-wrap mt-[30px] font-bold mb-[70px] text-[32px]">
+            <span className="text-[#0fcefd]">About Our AI</span> - Powered by
+            ChatGPT
+          </h2>
+          <img
+            src="blue-line.png"
+            alt="blue line"
+            className="-mt-[80px] w-[60%] h-[40px] mx-auto"
+          />
+        </div>
+        <div className="mt-[50px] w-full px-[250px] text-[1.5rem]">
+          <div className="flex justify-center">
+            <div className="d-flex justify-content-center section-3-5-content-box">
+              <p className="h4 text-center" id="section-5-paragraph">
+                LogGPT harnesses the formidable intelligence of ChatGPT, a
+                renowned AI model celebrated for its language understanding and
+                generation capabilities. Developed by OpenAI, ChatGPT is
+                designed to process and analyze vast volumes of text data with
+                exceptional accuracy. It undergoes rigorous training and
+                receives continuous updates, guaranteeing top-notch performance.
+                Trust in the power of ChatGPT to provide you with the most
+                advanced log analysis solutions available today.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex flex-col w-full h-[140vh] bg-[#0fcefd] pt-[35px] text-white justify-around items-center">
+        <div className="text-[32px] text-black font-bold -mt-[40px]">
+          <h2>Watch the video and learn more about LogGPT</h2>
+        </div>
+        <div className="flex flex-col w-full items-center justify-center">
+          <iframe
+            width="860"
+            height="615"
+            src="https://www.youtube.com/embed/4XpoRvexKNY?si=qb0a5lFgavi7gD4K"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+
+      <div className="flex flex-col bg-[#0e1111] pt-[45px] pb-[20px] px-[15%] text-[15px] leading-[24px] text-[#8d8d8d]">
+        <div className="flex mb-[1rem]">
+          <div className="w-[50%] pr-5">
+            <h6 className="text-white text-[20px] mb-5">About</h6>
+            <p className="text-justify mb-[1rem]">
+              <span className="text-[#0fcefd]">Log Sense AI</span> is a
+              technology firm specializing in AI and ML solutions for IT
+              operations and cloud computing. They have a skilled team of data
+              scientists and engineers focused on creating advanced yet
+              user-friendly log analysis tools. Known for innovation, Log Sense
+              AI helps businesses optimize operations and gain insights through
+              AI-driven analytics.
+            </p>
+          </div>
+
+          <div className="w-[25%]">
+            <h6 className="text-white text-[20px] mb-5">Documentation</h6>
+            <ul className="mr-[25px]">
+              <li className="mx-[10px] mt-0">
+                <a
+                  href="/container-help"
+                  target="_blank"
+                  className="underline hover:text-[#0fcefd] hover:no-underline"
+                >
+                  LogGPT for Container Logs
+                </a>
+              </li>
+              <li className="m-[10px]">
+                <a
+                  href="/system-help"
+                  target="_blank"
+                  className="underline hover:text-[#0fcefd] hover:no-underline"
+                >
+                  LogGPT for System Logs
+                </a>
+              </li>
+              <li className="m-[10px]">
+                <a
+                  href="/application-help"
+                  target="_blank"
+                  className="underline hover:text-[#0fcefd] hover:no-underline"
+                >
+                  LogGPT for Application Logs
+                </a>
+              </li>
+              <li className="m-[10px]">
+                <a
+                  href="/webserver-help"
+                  target="_blank"
+                  className="underline hover:text-[#0fcefd] hover:no-underline"
+                >
+                  LogGPT for Web Server Logs
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div className="w-[25%]">
+            <h6 className="text-white text-[20px] mb-5">Quick Links</h6>
+            <ul className="mr-[25px]">
+              <li className="m-[10px]">
+                <a
+                  href="#"
+                  target="_blank"
+                  className="underline hover:text-[#0fcefd] hover:no-underline"
+                >
+                  About Us
+                </a>
+              </li>
+              <li className="m-[10px]">
+                <a
+                  href="#"
+                  target="_blank"
+                  className="underline hover:text-[#0fcefd] hover:no-underline"
+                >
+                  Contact Us
+                </a>
+              </li>
+              <li className="m-[10px]">
+                <a
+                  href="/data-privacy"
+                  target="_blank"
+                  className="underline hover:text-[#0fcefd] hover:no-underline"
+                >
+                  Privacy Policy
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr className="border-[#bbb] opacity-[0.5]" />
+        <p className="mt-[1rem]">
+          Copyright &copy; 2024 All Rights Reserved by &nbsp;
+          <a
+            href="/"
+            className="underline hover:text-[#0fcefd] hover:no-underline"
+          >
+            LogSenseAI
+          </a>
+        </p>
+
+        <ul className="social-icons">
+          <li>
+            <a className="facebook" href="#">
+              <i className="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a className="twitter" href="#">
+              <i className="fa-brands fa-x-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a className="linkedin" href="#">
+              <i className="fa fa-linkedin"></i>
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   );
